@@ -24,30 +24,30 @@
 	</div>
 	
 	
-		<div class="right">
+	<div class="right">
 		<h5>Prijava</h5>
 		<p>Nemate nalog? <a href="#">Registrujte se</a></p>
-		<div class="inputs">
-			<input type="text" placeholder="korisničko ime">
-			<br>
-			<input type="password" placeholder="lozinka">
-		</div>
-			
+		<form>
+			<div class="inputs">
+				<input type="text" placeholder="korisničko ime" name = "username" [(ngModel)]="username">
+				<br>
+				<input type="password" placeholder="lozinka" name="password" [(ngModel)]="password">
+			</div>
+				
 			<br><br>
-			
-		<div class="remember-me--forget-password">
-				<!-- Angular -->
-	<label>
-		<input type="checkbox" name="item" checked/>
-		<span class="text-checkbox">Zapamti me</span>
-	</label>
-			<p>Zaboravili ste lozinku?</p>
-		</div>
-			
+				
+			<div class="remember-me--forget-password">
+						<!-- Angular -->
+				<label>
+					<input type="checkbox" name="item" checked/>
+					<span class="text-checkbox">Zapamti me</span>
+				</label>
+			</div>
 			<br>
-			<button>Prijavi se</button>
+			<input type="submit" value="Prijavi se" class="btn" (click)="loginUser()"/>
+		</form>
 	</div>
-	
+
 </div>
 <!-- partial -->
   
