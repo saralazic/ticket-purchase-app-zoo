@@ -1,6 +1,8 @@
-function init(){
-    localStorage.setItem('users_full_data', JSON.stringify(USERS_FULL_DATA));
-    localStorage.setItem('employees', JSON.stringify(EMPLOYEES));
+export function initializeLocalStorage(){
+    if (!localStorage.getItem(localStorageItems.USERS))
+        localStorage.setItem(localStorageItems.USERS, JSON.stringify(USERS_FULL_DATA));
+    if (!localStorage.getItem(localStorageItems.EMPLOYEES))
+        localStorage.setItem(localStorageItems.EMPLOYEES, JSON.stringify(EMPLOYEES));
 }
 
 const USERS_FULL_DATA = [
@@ -11,4 +13,11 @@ const USERS_FULL_DATA = [
     { username: "mina", password: "mina123", email: "mina@gmail.com", address: "Vardarska 12", first_name: "Mina", last_name: "Lazic", phone: "064/0914-217" },
 ]
 
-const EMPLOYEES = ["pеra", "zika", "laza"];
+const EMPLOYEES = ["pera", "zika", "laza"];
+
+
+export enum localStorageItems {
+    USERS = 'users_full_data', 
+    EMPLOYEES = 'employees',
+    LOGGED_IN = 'logged_in'
+}
