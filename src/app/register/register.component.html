@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page in HTML with CSS Code Example</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><link rel="stylesheet" href="./register.component.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="box-form">
+	<div class="left">
+		<div class="overlay">
+		<h1>Zoo vrt &nbsp; Pandica</h1>
+		
+		<span>
+			<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+			<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+		</span>
+		</div>
+	</div>
+	
+	
+	<div class="right">
+		<h5>Registracija</h5>
+		<p>Već imate nalog?  <a href="/login">Prijavite se</a></p>
+		<form>
+			<div class="inputs">
+				<input type="text" placeholder="korisničko ime" name = "username" [(ngModel)]="username">
+				<input type="password" placeholder="lozinka" name="password" [(ngModel)]="password">
+                <input type="text" placeholder="adresa e-pošte" name = "email" [(ngModel)]="email">
+                <input type="text" placeholder="ime" name = "firstName" [(ngModel)]="firstName">
+                <input type="text" placeholder="prezime" name = "lastName" [(ngModel)]="lastName">
+                <input type="text" placeholder="broj telefona" name = "phone" [(ngModel)]="phone">
+                <input type="text" placeholder="adresa" name = "address" [(ngModel)]="address">
+			</div>
+
+			<input type="submit" value="Registruj se" class="btn" (click)="loginUser()"/>
+		</form>
+		<p class="error"> {{error}} </p>
+
+	</div>
+
+</div>
+<!-- partial -->
+  
+</body>
+</html>
