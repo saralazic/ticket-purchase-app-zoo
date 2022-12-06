@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserType } from '../models/user';
 import { authService } from '../services/auth.service';
 
 @Component({
@@ -15,6 +17,8 @@ export class LoginComponent implements OnInit {
   password: string | undefined;
   error: string | undefined;
 
+  constructor(private router: Router) {}
+
   ngOnInit() {}
 
   loginUser() {
@@ -23,6 +27,11 @@ export class LoginComponent implements OnInit {
       const credentials = { username: this.username, password: this.password };
       const user = this.authService.login(credentials);
       if (!user) this.error = 'Pogrešno korisničko ime ili lozinka!';
+      else {
+        if (user.getType() === UserType.visitor)
+          this.router.navigate(['/visitor']);
+        else this.router.navigate(['employee']);
+      }
     }
   }
 }

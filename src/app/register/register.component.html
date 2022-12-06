@@ -29,13 +29,13 @@
 		<p>Već imate nalog?  <a href="/login">Prijavite se</a></p>
 		<form>
 			<div class="inputs">
-				<input type="text" placeholder="korisničko ime" name = "username" [(ngModel)]="username">
-				<input type="password" placeholder="lozinka" name="password" [(ngModel)]="password">
+				<input type="text" placeholder="korisničko ime" name = "username" required minlength="4" [(ngModel)]="username">
+				<input type="password" placeholder="lozinka" name="password" required minlength="6" [(ngModel)]="password">
                 <input type="text" placeholder="adresa e-pošte" name = "email" [(ngModel)]="email">
-                <input type="text" placeholder="ime" name = "firstName" [(ngModel)]="firstName">
-                <input type="text" placeholder="prezime" name = "lastName" [(ngModel)]="lastName">
-                <input type="text" placeholder="broj telefona" name = "phone" [(ngModel)]="phone">
-                <input type="text" placeholder="adresa" name = "address" [(ngModel)]="address">
+                <input type="text" placeholder="ime" name = "firstName" required minlength="3" [(ngModel)]="firstName">
+                <input type="text" placeholder="prezime" name = "lastName" required minlength="3" [(ngModel)]="lastName">
+                <input type="text" placeholder="broj telefona" name = "phone" required minlength="8" [(ngModel)]="phone">
+                <input type="text" placeholder="adresa" name = "address" required minlength="5" [(ngModel)]="address">
 			</div>
 
 			<input type="submit" value="Registruj se" class="btn" (click)="loginUser()"/>

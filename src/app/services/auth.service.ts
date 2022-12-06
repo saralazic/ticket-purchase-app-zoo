@@ -1,6 +1,7 @@
 import { initializeLocalStorage, localStorageItems } from 'initial_data/init';
 import { User, UserCredentials, UserType } from '../models/user';
 import { userService } from './userService';
+import { UserWithType } from './../models/user';
 
 export class AuthService {
   constructor() {
@@ -46,9 +47,11 @@ export class AuthService {
   logout() {
     localStorage.removeItem(localStorageItems.LOGGED_IN);
   }
-}
 
-export const REGISTER_URL = 'https/::localhost:4200/api/register';
-export const LOGIN_URL = 'https/::localhost:4200/api/login';
+  getLoggedUser(): UserWithType | null {
+    const loggedIn = localStorage.getItem(localStorageItems.LOGGED_IN);
+    return loggedIn === null ? null : JSON.parse(loggedIn);
+  }
+}
 
 export const authService = new AuthService();
