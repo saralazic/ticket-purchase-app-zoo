@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     if (this.username !== undefined && this.password !== undefined) {
       const credentials = { username: this.username, password: this.password };
       const user = this.authService.login(credentials);
-      if (!user) this.error = 'Pogrešno korisničko ime ili lozinka!';
+      if (!user) this.error = 'Pogrešni kredencijali!';
       else {
         if (user.getType() === UserType.visitor)
           this.router.navigate(['/visitor']);
