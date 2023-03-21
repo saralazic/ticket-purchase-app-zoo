@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><link rel="stylesheet" href="./login.component.css">
+  <link href="https://fonts.cdnfonts.com/css/baloo-bhai-2" rel="stylesheet">
+
 </head>
 <body>
 <!-- partial:index.partial.html -->
@@ -13,27 +15,19 @@
 
 
 <div  class="login_form_container">
-	
-	
 	<div class="login_form">
 		<h5 class="login_headline">Prijava</h5>
-		<p>Nemate nalog? <a href="/register">Registrujte se</a></p>
 		<form>
 			<div>
-				<input type="text" placeholder="korisničko ime" name = "username" [(ngModel)]="username">
-				<input type="password" placeholder="lozinka" name="password" [(ngModel)]="password">
+				<p>korisničko ime</p>
+				<input type="text" name = "username" [(ngModel)]="username">
+				<p>lozinka</p>
+				<input type="password" name="password" [(ngModel)]="password">
 			</div>
+			<p>Nemate nalog? <a href="/register">Registrujte se</a></p>
 				
-			<br><br>
-				
-			<div>
-						<!-- Angular -->
-				<!-- <label>
-					<input type="checkbox" name="item" checked/>
-					<span class="text-checkbox">Zapamti me</span>
-				</label> -->
-			</div>
 			<br>
+				
 			<input type="submit" value="Prijavi se" class="btn" (click)="loginUser()"/>
 		</form>
 		<br><br>
