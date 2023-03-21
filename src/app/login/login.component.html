@@ -15,21 +15,20 @@
 
 
 <div  class="login_form_container">
-	<div class="login_form">
-		<h5 class="login_headline">Prijava</h5>
-		<form>
-			<div>
-				<p>korisničko ime</p>
-				<input type="text" name = "username" [(ngModel)]="username">
-				<p>lozinka</p>
-				<input type="password" name="password" [(ngModel)]="password">
-			</div>
-			<p>Nemate nalog? <a href="/register">Registrujte se</a></p>
-				
-			<br>
-				
-			<input type="submit" value="Prijavi se" class="btn" (click)="loginUser()"/>
-		</form>
+	<div >
+
+		<table class="login_form baloo_bhai">
+			<tr><td colspan="2" class="login_headline">Prijava</td></tr>
+			<tr><td colspan="2">korisničko ime</td></tr>
+			<tr><td colspan="2"><input type="text" name = "username" [(ngModel)]="username"></td></tr>
+			<tr><td colspan="2">lozinka</td></tr>
+			<tr><td colspan="2"><input type="password" name="password" [(ngModel)]="password"></td></tr>
+			<tr><td>&nbsp;</td></tr>
+			<tr><td align="right">Nemate nalog?&nbsp;&nbsp;</td><td align="left">&nbsp;&nbsp;<a href="/register">Registrujte se</a></td></tr>
+			<tr><td>&nbsp;</td></tr>
+
+			<tr><td colspan="2"><input type="submit" value="Prijavi se" class="btn" (click)="loginUser()"/></td></tr>
+		</table>
 		<br><br>
 		<p class="error"> {{error}} </p>
 
