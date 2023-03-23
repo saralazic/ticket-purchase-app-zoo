@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { BAD_CREDENTIALS, NO_VALUES } from '../constants/errors';
 import { UserType } from '../models/user';
 import { authService } from '../services/auth.service';
 
@@ -26,12 +27,12 @@ export class LoginComponent implements OnInit {
     if (this.username !== undefined && this.password !== undefined) {
       const credentials = { username: this.username, password: this.password };
       const user = this.authService.login(credentials);
-      if (!user) this.error = 'Pogrešni kredencijali!';
+      if (!user) this.error = BAD_CREDENTIALS;
       else {
         if (user.getType() === UserType.visitor)
           this.router.navigate(['/visitor']);
         else this.router.navigate(['employee']);
       }
-    }
+    } else this.error = NO_VALUES;
   }
 }

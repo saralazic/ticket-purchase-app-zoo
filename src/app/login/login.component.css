@@ -107,6 +107,13 @@ label{
     line-height: 33.33%;
 }
 
+.btn:disabled,
+.btn.disabled {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
 .my_input {
     background-color: #003300;
     width: 300px;
