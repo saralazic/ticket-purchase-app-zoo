@@ -21,7 +21,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {}
 
-  loginUser() {
+  registerUser() {
     this.error = undefined;
     if (this.username !== undefined && this.password !== undefined) {
       const credentials = { username: this.username, password: this.password };
