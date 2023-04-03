@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { User, UserData } from '../models/user';
 import { authService } from '../services/auth.service';
 
 @Component({
@@ -19,14 +21,27 @@ export class RegisterComponent implements OnInit {
 
   error: string | undefined;
 
+  constructor(private router: Router) {}
+
   ngOnInit() {}
 
   registerUser() {
     this.error = undefined;
-    if (this.username !== undefined && this.password !== undefined) {
-      const credentials = { username: this.username, password: this.password };
-      const user = this.authService.login(credentials);
-      if (!user) this.error = 'Pogrešni podaci!';
+    const data = {
+      username: this.username,
+      password: this.password,
+      email: this.email,
+      first_name: this.firstName,
+      last_name: this.lastName,
+      phone: this.phone,
+      address: this.address,
+    } as UserData;
+    const authServiceResponse = this.authService.register(data);
+
+    if (typeof authServiceResponse === 'string') {
+      this.error = authServiceResponse;
+    } else {
+      this.router.navigate(['/visitor']);
     }
   }
 }
