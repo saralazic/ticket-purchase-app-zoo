@@ -1,0 +1,22 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Baloo Bhai 2', sans-serif;
+
+}
+
+.bg {
+    background-image: url("../../../assets/images/homepage.png");
+    /* Full height */
+    height: 100%;
+    width: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+
+    margin: 0;
+    padding: 0%;
+}

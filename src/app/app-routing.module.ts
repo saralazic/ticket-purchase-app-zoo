@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomepageEmployeeComponent } from './homepage-employee/homepage-employee.component';
-import { HomepageVisitorComponent } from './homepage-visitor/homepage-visitor.component';
-import { LoginComponent } from './login/login.component';
+
+import { LoginComponent } from './components/login/login.component';
 import { UserType } from './models/user';
-import { RegisterComponent } from './register/register.component';
+import { RegisterComponent } from './components/register/register.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
 
 const routes: Routes = [
   {
@@ -20,12 +20,8 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
-    path: 'visitor',
-    component: HomepageVisitorComponent,
-  },
-  {
-    path: 'employee',
-    component: HomepageEmployeeComponent,
+    path: 'homepage',
+    component: HomepageComponent,
   },
 ];
 
