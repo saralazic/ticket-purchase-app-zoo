@@ -46,18 +46,6 @@ export class AuthService {
   }
 
   register(data: UserData): User | RegisterErrors {
-    if (
-      typeof data.username !== 'string' ||
-      typeof data.password !== 'string' ||
-      typeof data.email !== 'string' ||
-      typeof data.first_name !== 'string' ||
-      typeof data.last_name != 'string' ||
-      typeof data.address !== 'string' ||
-      typeof data.phone !== 'string'
-    ) {
-      return RegisterErrors.EMPTY_INPUT; //error
-    }
-
     const allUsers = userService.getAllUsers();
     let currentUser = allUsers.find((usr) => usr.username === data.username);
 
