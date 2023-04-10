@@ -6,8 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
-import { HeaderComponent } from './components/header/header.component';
+import { HeaderComponent } from './components/marginals/header/header.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
+import { FooterComponent } from './components/marginals/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
     LoginComponent,
     HeaderComponent,
     HomepageComponent,
+    FooterComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

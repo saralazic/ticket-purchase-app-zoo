@@ -1,0 +1,51 @@
+.header{
+    background-color: #003300;
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    vertical-align: middle;
+    display: inline-block;
+    padding: 0;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+body{
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+div{
+    margin-top: 0;
+    margin-left: 0;
+}
+
+.table{
+    table-layout: fixed;
+    min-width: 100%;
+}
+
+.table td,
+th {
+  text-align: center;
+}
+
+.table td.one {
+  width: 4%;
+}
+
+.table td.two {
+  width: 10%;
+}
+
+.table td.three {
+  width: 20%;
+}
+
+.baloo_bhai {
+    color: white;
+    font-family: 'Baloo Bhai 2', sans-serif;
+    font-weight: bolder;
+}
