@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { BAD_CREDENTIALS, NO_VALUES } from '../../constants/errors';
-import { authService } from '../../services/auth.service';
+import { BAD_CREDENTIALS, NO_VALUES } from '../../../constants/errors';
+import { authService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-login',

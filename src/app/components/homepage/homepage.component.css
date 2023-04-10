@@ -25,3 +25,21 @@ body, html {
     color: white;
     text-align: center;
 }
+
+.message {
+    position: relative;
+    float: right;
+    padding: 100px;
+    padding-top: 10%;
+}
+
+.baloo_bhai {
+    color: white;
+    font-family: 'Baloo Bhai 2', sans-serif;
+    -webkit-text-stroke: 2px black;
+    font-weight: 900;
+    font-size: 30px;
+    text-align: left;
+}
+
+
