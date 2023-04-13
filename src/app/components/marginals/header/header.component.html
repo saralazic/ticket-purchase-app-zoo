@@ -14,39 +14,39 @@
             </tr>
             <tr>
                 <td class="one">
-                    <button mat-fab extended class="icon_button">
+                    <button mat-fab extended class="icon_button" onclick="location.href = '/tickets';">
                         <mat-icon>confirmation_number</mat-icon>
                         ULAZNICE
                     </button>
                 </td>
                 <td class="two"> 
-                    <button *ngIf = "loggedUser?.type === 1" mat-fab extended class="icon_button">
+                    <button *ngIf = "loggedUser?.type === 1" mat-fab extended class="icon_button" onclick="location.href = '/events';">
                         <mat-icon>event_seat</mat-icon>
                         DEŠAVANJA
                     </button>
                 </td>
-                <td  *ngIf = "loggedUser?.type === 0" class = "three">
-                    <button mat-fab extended class="icon_button">
-                        <mat-icon>pets</mat-icon>
-                        NOVA ŽIVOTINJA
-                    </button>
-                </td>
                 <td  *ngIf = "loggedUser?.type === 1" class="two">
-                    <button mat-fab extended class="icon_button">
+                    <button mat-fab extended class="icon_button"  onclick="location.href = '/animals';">
                         <mat-icon>pets</mat-icon>
                         ŽIVOTINJE
                     </button>
                  </td>
+                 <td  *ngIf = "loggedUser?.type === 0" class = "three">
+                    <button mat-fab extended class="icon_button"  onclick="location.href = '/operate-tickets';">
+                        <mat-icon>pets</mat-icon>
+                        NOVA ŽIVOTINJA
+                    </button>
+                </td>
                 <td class="three"></td>
                 <td *ngIf = "loggedUser?.type === 1" class="one">
-                    <button mat-fab extended class="icon_button">
+                    <button mat-fab extended class="icon_button"  onclick="location.href = '/notifications';">
                         <mat-icon>notifications</mat-icon>
                         OBAVEŠTENJA
                     </button> 
                 </td>
                 <td class="two">
-                    <button mat-fab extended class="icon_button">
-                        MOJ NALOG
+                    <button mat-fab extended class="icon_button"  onclick="location.href = '/account';">
+                        NALOG
                         <mat-icon>account_circle</mat-icon>
                     </button> 
                 </td>                

@@ -12,6 +12,12 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { FooterComponent } from './components/marginals/footer/footer.component';
 import { AboutComponent } from './components/about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TicketsComponent } from './components/tickets/tickets.component';
+import { EventsComponent } from './components/events/events.component';
+import { AnimalsComponent } from './components/animals/animals.component';
+import { NotificationsComponent } from './components/notifications/notifications.component';
+import { AccountComponent } from './components/account/account.component';
+import { OperateTicketsComponent } from './components/operate-tickets/operate-tickets.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +28,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomepageComponent,
     FooterComponent,
     AboutComponent,
+    TicketsComponent,
+    EventsComponent,
+    AnimalsComponent,
+    NotificationsComponent,
+    AccountComponent,
+    OperateTicketsComponent,
   ],
   imports: [
     BrowserModule,
