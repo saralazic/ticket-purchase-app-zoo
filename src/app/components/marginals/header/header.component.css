@@ -20,31 +20,8 @@ body{
 }
 
 div{
-    margin-top: 0;
+    margin-top: 5px;
     margin-left: 0;
-}
-
-.table{
-    table-layout: fixed;
-    min-width: 100%;
-    padding-right: 0;
-}
-
-.table td,
-th {
-  text-align: center;
-}
-
-.table td.one {
-  width: 4%;
-}
-
-.table td.two {
-  width: 10%;
-}
-
-.table td.three {
-  width: 50%;
 }
 
 .baloo_bhai {
@@ -59,3 +36,7 @@ th {
   border: none;
 }
 
+.evenly-distributed-children {
+  display: flex;
+  justify-content: space-between;
+}
