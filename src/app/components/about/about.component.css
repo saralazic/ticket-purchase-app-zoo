@@ -3,6 +3,7 @@ body, html {
     width: 100%;
     overflow: hidden;
     font-family: 'Baloo Bhai 2', sans-serif;
+    font-weight: bolder;
 }
 
 .bg {
@@ -92,4 +93,13 @@ h1{
 .center {
     display: flex;
     justify-content: center;
-  }
+}
+
+.baloo_bhai {
+    color: white;
+    font-family: 'Baloo Bhai 2', sans-serif;
+    font-weight: 900;
+    font-size: 30px;
+    text-align: left;
+}
+
