@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" class="bg">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><link rel="stylesheet" href="./header.component.css">
+  <link href="https://fonts.cdnfonts.com/css/baloo-bhai-2" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <div class="header fixed-top">
+        <div class="evenly-distributed-children baloo_bhai">
+            <button mat-fab extended class="icon_button" onclick="location.href = '/tickets';">
+                <mat-icon>confirmation_number</mat-icon>
+                ULAZNICE
+            </button>
+            <button *ngIf = "loggedUser?.type === 1" mat-fab extended class="icon_button" onclick="location.href = '/events';">
+                <mat-icon>event_seat</mat-icon>
+                DEŠAVANJA
+            </button>
+            <button *ngIf = "loggedUser?.type === 1" mat-fab extended class="icon_button"  onclick="location.href = '/animals';">
+                <mat-icon>pets</mat-icon>
+                ŽIVOTINJE
+            </button>
+            <button *ngIf = "loggedUser?.type === 0" mat-fab extended class="icon_button"   onclick="location.href = '/operate-tickets';">
+                <mat-icon>pets</mat-icon>
+                NOVA ŽIVOTINJA
+            </button>
+            <button *ngIf = "loggedUser?.type === 1" mat-fab extended class="icon_button"  onclick="location.href = '/notifications';">
+                <mat-icon>notifications</mat-icon>
+                OBAVEŠTENJA
+            </button> 
+            <button mat-fab extended class="icon_button"  onclick="location.href = '/account';">
+                NALOG
+                <mat-icon>account_circle</mat-icon>
+            </button> 
+
+          </div>
+
+
+        <br>
+        <br>
+    </div>
+</body>
+
+

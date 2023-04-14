@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { RegisterErrors } from '../constants/errors';
-import { User, UserData } from '../models/user';
-import { authService } from '../services/auth.service';
+import { RegisterErrors } from '../../../constants/errors';
+import { User, UserData } from '../../../models/user';
+import { authService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -45,7 +45,7 @@ export class RegisterComponent implements OnInit {
       if (typeof authServiceResponse === 'string') {
         this.error = authServiceResponse;
       } else {
-        this.router.navigate(['/visitor']);
+        this.router.navigate(['/homepage']);
       }
     }
   }

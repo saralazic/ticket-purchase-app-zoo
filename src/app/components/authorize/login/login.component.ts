@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { BAD_CREDENTIALS, NO_VALUES } from '../constants/errors';
-import { UserType } from '../models/user';
-import { authService } from '../services/auth.service';
+import { BAD_CREDENTIALS, NO_VALUES } from '../../../constants/errors';
+import { authService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -29,9 +28,7 @@ export class LoginComponent implements OnInit {
       const user = this.authService.login(credentials);
       if (!user) this.error = BAD_CREDENTIALS;
       else {
-        if (user.getType() === UserType.visitor)
-          this.router.navigate(['/visitor']);
-        else this.router.navigate(['employee']);
+        this.router.navigate(['/homepage']);
       }
     } else this.error = NO_VALUES;
   }
