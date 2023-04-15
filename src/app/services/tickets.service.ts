@@ -1,5 +1,4 @@
 import { localStorageItems } from 'initial_data/init';
-import { AuthService } from './auth.service';
 import { Ticket, TicketData, TicketDataDto } from '../models/tickets';
 
 export class TicketService {
