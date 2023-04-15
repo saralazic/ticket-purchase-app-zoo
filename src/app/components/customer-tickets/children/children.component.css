@@ -92,3 +92,13 @@ tr{
     left: 60%;
 }
 
+.buttons {
+    background-color: #f3aa00;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+
+.center_button{
+    text-align: center;
+}
