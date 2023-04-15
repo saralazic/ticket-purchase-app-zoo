@@ -3,7 +3,6 @@ import { TicketData } from 'src/app/models/tickets';
 import { PRICES, PROMO_CODES, TICKET_TYPE } from 'src/app/models/types';
 import { authService } from 'src/app/services/auth.service';
 import { ticketService } from 'src/app/services/tickets.service';
-import { userService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-children',
@@ -21,6 +20,8 @@ export class ChildrenComponent {
   public quantity_full = 0;
   public price = 0;
 
+  public message?: string;
+
   ngOnInit() {
     this.manageButton();
   }
@@ -28,7 +29,7 @@ export class ChildrenComponent {
   constructor() {}
 
   sendRequest() {
-    const user = authService.getLoggedUser();
+    const user = this.authService.getLoggedUser();
 
     if (user) {
       const ticket = {
@@ -44,7 +45,8 @@ export class ChildrenComponent {
         },
       } as TicketData;
 
-      ticketService.sendTicketToProcessing(ticket);
+      this.ticketService.sendTicketToProcessing(ticket);
+      this.message = 'Vaš zahtev je prosleđen na obradu.Hvala :)';
     }
   }
 
