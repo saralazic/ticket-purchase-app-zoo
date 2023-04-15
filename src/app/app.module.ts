@@ -18,6 +18,7 @@ import { AnimalsComponent } from './components/animals/animals.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { AccountComponent } from './components/account/account.component';
 import { OperateTicketsComponent } from './components/operate-tickets/operate-tickets.component';
+import { OperateAnimalsComponent } from './components/operate-animals/operate-animals.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { OperateTicketsComponent } from './components/operate-tickets/operate-ti
     NotificationsComponent,
     AccountComponent,
     OperateTicketsComponent,
+    OperateAnimalsComponent,
   ],
   imports: [
     BrowserModule,

@@ -8,4 +8,13 @@ body, html {
   }
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+  font-family: 'Baloo Bhai 2', sans-serif;
+  font-weight: bolder;
+ }
+
+button{
+  font-family: 'Baloo Bhai 2', sans-serif;
+  font-weight: bolder;
+  font-size: 20px;
+}

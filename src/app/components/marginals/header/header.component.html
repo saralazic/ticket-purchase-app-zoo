@@ -9,7 +9,15 @@
 <body>
     <div class="header fixed-top">
         <div class="evenly-distributed-children baloo_bhai">
-            <button mat-fab extended class="icon_button" onclick="location.href = '/tickets';">
+            <button mat-fab class="icon_button" onclick="location.href = '/homepage';">
+                <mat-icon>home</mat-icon>
+            </button>
+
+            <button mat-fab extended class="icon_button" *ngIf = "loggedUser?.type === 1" onclick="location.href = '/tickets';">
+                <mat-icon>confirmation_number</mat-icon>
+                ULAZNICE
+            </button>
+            <button mat-fab extended class="icon_button" *ngIf = "loggedUser?.type === 0" onclick="location.href = '/operate-tickets';">
                 <mat-icon>confirmation_number</mat-icon>
                 ULAZNICE
             </button>
@@ -21,7 +29,7 @@
                 <mat-icon>pets</mat-icon>
                 ŽIVOTINJE
             </button>
-            <button *ngIf = "loggedUser?.type === 0" mat-fab extended class="icon_button"   onclick="location.href = '/operate-tickets';">
+            <button *ngIf = "loggedUser?.type === 0" mat-fab extended class="icon_button"   onclick="location.href = '/operate-animals';">
                 <mat-icon>pets</mat-icon>
                 NOVA ŽIVOTINJA
             </button>
@@ -33,12 +41,8 @@
                 NALOG
                 <mat-icon>account_circle</mat-icon>
             </button> 
-
           </div>
 
-
-        <br>
-        <br>
     </div>
 </body>
 
