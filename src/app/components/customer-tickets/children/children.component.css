@@ -63,16 +63,16 @@ body, html {
 }
 
 table{
-    border-spacing: 50px 0;
+    border-spacing: 50px 20px;
 }
 
 th{
- font-size: 35px;
+ font-size: 40px;
  text-align: left;
 }
 
 tr{
-    font-size: 25px;
+    font-size: 30px;
 }
 
 .my_input {
@@ -87,9 +87,9 @@ tr{
 }
 
 .center {
-    position: absolute;
-    top: 40%;
-    left: 60%;
+    position: relative;
+    top: 25%;
+    left: 40%;
 }
 
 .buttons {
@@ -101,4 +101,14 @@ tr{
 
 .center_button{
     text-align: center;
+}
+
+.number_input{
+    border-top-color: green;
+    border-bottom-color: green;
+    border-left-color: green;
+    border-right-color: green;
+
+    color: #003300;
+    border-style: solid 1px;
 }
