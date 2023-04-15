@@ -12,13 +12,16 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { FooterComponent } from './components/marginals/footer/footer.component';
 import { AboutComponent } from './components/about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TicketsComponent } from './components/tickets/tickets.component';
+import { TicketsComponent } from './components/customer-tickets/tickets/tickets.component';
 import { EventsComponent } from './components/events/events.component';
 import { AnimalsComponent } from './components/animals/animals.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { AccountComponent } from './components/account/account.component';
 import { OperateTicketsComponent } from './components/operate-tickets/operate-tickets.component';
 import { OperateAnimalsComponent } from './components/operate-animals/operate-animals.component';
+import { ChildrenComponent } from './components/customer-tickets/children/children.component';
+import { AdultsComponent } from './components/customer-tickets/adults/adults.component';
+import { GroupComponent } from './components/customer-tickets/group/group.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +39,9 @@ import { OperateAnimalsComponent } from './components/operate-animals/operate-an
     AccountComponent,
     OperateTicketsComponent,
     OperateAnimalsComponent,
+    ChildrenComponent,
+    AdultsComponent,
+    GroupComponent,
   ],
   imports: [
     BrowserModule,

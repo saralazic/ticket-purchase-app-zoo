@@ -6,13 +6,16 @@ import { UserType } from './models/user';
 import { RegisterComponent } from './components/authorize/register/register.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { AboutComponent } from './components/about/about.component';
-import { TicketsComponent } from './components/tickets/tickets.component';
+import { TicketsComponent } from './components/customer-tickets/tickets/tickets.component';
 import { EventsComponent } from './components/events/events.component';
 import { AnimalsComponent } from './components/animals/animals.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { AccountComponent } from './components/account/account.component';
 import { OperateTicketsComponent } from './components/operate-tickets/operate-tickets.component';
 import { OperateAnimalsComponent } from './components/operate-animals/operate-animals.component';
+import { AdultsComponent } from './components/customer-tickets/adults/adults.component';
+import { ChildrenComponent } from './components/customer-tickets/children/children.component';
+import { GroupComponent } from './components/customer-tickets/group/group.component';
 
 const routes: Routes = [
   {
@@ -62,6 +65,18 @@ const routes: Routes = [
   {
     path: 'operate-animals',
     component: OperateAnimalsComponent,
+  },
+  {
+    path: 'tickets/adults',
+    component: AdultsComponent,
+  },
+  {
+    path: 'tickets/children',
+    component: ChildrenComponent,
+  },
+  {
+    path: 'tickets/group',
+    component: GroupComponent,
   },
 ];
 

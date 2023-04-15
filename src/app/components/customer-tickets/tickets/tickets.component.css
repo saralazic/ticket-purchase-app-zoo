@@ -1,0 +1,60 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Baloo Bhai 2', sans-serif;
+}
+
+.bg {
+    background-image: url("../../../../assets/images/tickets_bg.jpg") ;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    margin: 0;
+    padding: 0%;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+
+.baloo_bhai {
+    color: white;
+    font-family: 'Baloo Bhai 2', sans-serif;
+    font-weight: 900;
+    font-size: 30px;
+    text-align: left;
+}
+
+.buttons {
+    background-color: #003300;
+    color: white;
+    font-size: 30px;
+}
+
+.button_container {
+    margin-left: 100px;
+    margin-top: 100px;
+}
+
+
+.text_container {
+    margin-top: 50px;
+    margin-left: 100px;
+    color: rgb(213, 213, 252);
+    font-size: 25px;
+}
+
+.heading {
+    color: white;
+    font-size: 40px;  
+}
