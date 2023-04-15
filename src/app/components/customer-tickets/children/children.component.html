@@ -24,28 +24,28 @@
                 <td>Zoo</td>
                 <td>200din</td>
                 <td>
-                  <input type="number" id="quantity_zoo" name="quantity_zoo" min="0" max="100" class="number_input">
+                  <input type="number" id="quantity_zoo" name="quantity_zoo" min="0" max="100" class="number_input" [(ngModel)]="quantity_zoo" (change) = "manageButton(); calculatePrice()">
                 </td>
             </tr>
             <tr>
                 <td>Zoo + akvarijum</td>
                 <td>250din</td>
                 <td>
-                  <input type="number" id="quantity_aquarium" name="quantity_aquarium" min="0" max="100" class="number_input">
+                  <input type="number" id="quantity_aquarium" name="quantity_aquarium" min="0" max="100" class="number_input" [(ngModel)]="quantity_aquarium" (change) = "manageButton(); calculatePrice()">
                 </td>                
             </tr>
             <tr>
                 <td>Zoo + hranjenje pandi</td>
                 <td>400din</td>
                 <td>
-                  <input type="number" id="quantity_feeding" name="quantity_feeding" min="0" max="100" class="number_input">
+                  <input type="number" id="quantity_feeding" name="quantity_feeding" min="0" max="100" class="number_input" [(ngModel)]="quantity_feeding" (change) = "manageButton(); calculatePrice()">
                 </td>
             </tr>
             <tr>
                 <td>Full pandica</td>
                 <td>700din</td>
                 <td>
-                  <input type="number" id="quantity_full" name="quantity_full" min="0" max="100" class="number_input">
+                  <input type="number" id="quantity_full" name="quantity_full" min="0" max="100" class="number_input"  [(ngModel)]="quantity_full" (change) = "manageButton(); calculatePrice()">
                 </td>
             </tr>
             <tr>
@@ -65,15 +65,15 @@
             <tr>
                 <td colspan="2">Unesi promo kod:</td>
                 <td colspan="1">        
-                    <input class="w3-input my_input" type="text" name = "promocode" [(ngModel)]="promocode">
+                    <input class="w3-input my_input" type="text" name = "promo_code" [(ngModel)]="promo_code" (change) = "calculatePrice()">
                 </td>
             </tr>
             <tr>
-              <td colspan="3"></td>
+              <td colspan="3">Ukupna cena je {{price}}</td>
             </tr>
             <tr>
               <td colspan="3" class="center_button">
-                <button class="buttons">&nbsp; &nbsp; Potvrdi &nbsp; &nbsp; </button>  <br><br>
+                <button id = "submitReq" (click)="sendRequest()">&nbsp; &nbsp; Potvrdi &nbsp; &nbsp; </button>  <br><br>
               </td>
             </tr>
         </table>

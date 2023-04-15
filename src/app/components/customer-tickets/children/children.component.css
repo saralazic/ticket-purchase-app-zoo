@@ -92,11 +92,15 @@ tr{
     left: 40%;
 }
 
-.buttons {
+button {
     background-color: #f3aa00;
     color: white;
     font-size: 30px;
     text-align: center;
+}
+
+button:disabled {
+    background-color: #d0c4a8;
 }
 
 .center_button{
