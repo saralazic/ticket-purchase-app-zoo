@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { INVALID_TICKET_INPUT } from 'src/app/constants/errors';
 import { TicketData } from 'src/app/models/tickets';
 import { PRICES, PROMO_CODES, TICKET_TYPE } from 'src/app/models/types';
 import { authService } from 'src/app/services/auth.service';
@@ -46,7 +47,7 @@ export class ChildrenComponent {
       } as TicketData;
 
       this.ticketService.sendTicketToProcessing(ticket);
-      this.message = 'Vaš zahtev je prosleđen na obradu.Hvala :)';
+      this.message = POSITIVE_MESSAGE;
     }
   }
 
@@ -69,7 +70,7 @@ export class ChildrenComponent {
       const sumFeed = feed * priceFeed;
       const sumFull = full * priceFull;
       this.price = sumZoo + sumAq + +sumFeed + sumFull;
-    } else this.message = 'Molimo unestite ispravan broj karata!';
+    } else this.message = INVALID_TICKET_INPUT;
   }
 
   manageButton() {
@@ -147,3 +148,5 @@ export class ChildrenComponent {
     return { zoo, aq, feed, full };
   }
 }
+
+const POSITIVE_MESSAGE = 'Vaš zahtev je prosleđen na obradu.Hvala :)';

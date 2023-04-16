@@ -10,3 +10,5 @@ export enum RegisterErrors {
   INVALID_PASSWORD = 'Lozinka ne može biti kraća od 7 znakova, mora početi slovom i sadržati barem po jedno veliko slovo, specijalni karakter i cifru.',
   INVALID_FIELD = 'Polje ne može biti kraće od tri karaktera!',
 }
+
+export const INVALID_TICKET_INPUT = 'Molimo unestite ispravan broj karata!';
