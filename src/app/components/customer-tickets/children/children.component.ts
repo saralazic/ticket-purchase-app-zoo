@@ -51,23 +51,25 @@ export class ChildrenComponent {
   }
 
   calculatePrice() {
-    const priceFeed =
-      this.promo_code?.toLowerCase() === PROMO_CODES.free_feeding
-        ? PRICES.CHILDREN_ZOO
-        : PRICES.CHILDREN_FEED;
+    if (this.validNumberOfTickets()) {
+      const priceFeed =
+        this.promo_code?.toLowerCase() === PROMO_CODES.free_feeding
+          ? PRICES.CHILDREN_ZOO
+          : PRICES.CHILDREN_FEED;
 
-    const priceFull =
-      this.promo_code?.toLowerCase() === PROMO_CODES.free_feeding
-        ? PRICES.CHILDREN_AQ
-        : PRICES.CHILDREN_FULL;
+      const priceFull =
+        this.promo_code?.toLowerCase() === PROMO_CODES.free_feeding
+          ? PRICES.CHILDREN_AQ
+          : PRICES.CHILDREN_FULL;
 
-    const { zoo, aq, feed, full } = this.discount();
+      const { zoo, aq, feed, full } = this.discount();
 
-    const sumZoo = zoo * PRICES.CHILDREN_ZOO;
-    const sumAq = aq * PRICES.CHILDREN_AQ;
-    const sumFeed = feed * priceFeed;
-    const sumFull = full * priceFull;
-    this.price = sumZoo + sumAq + +sumFeed + sumFull;
+      const sumZoo = zoo * PRICES.CHILDREN_ZOO;
+      const sumAq = aq * PRICES.CHILDREN_AQ;
+      const sumFeed = feed * priceFeed;
+      const sumFull = full * priceFull;
+      this.price = sumZoo + sumAq + +sumFeed + sumFull;
+    } else this.message = 'Molimo unestite ispravan broj karata!';
   }
 
   manageButton() {
@@ -79,6 +81,11 @@ export class ChildrenComponent {
         this.quantity_feeding > 0 ||
         this.quantity_full > 0);
     button.disabled = !enabled;
+    this.resetMessage();
+  }
+
+  resetMessage() {
+    this.message = undefined;
   }
 
   //** helpers */
