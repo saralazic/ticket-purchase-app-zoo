@@ -12,3 +12,5 @@ export enum RegisterErrors {
 }
 
 export const INVALID_TICKET_INPUT = 'Molimo unestite ispravan broj karata!';
+
+export const GROUP_TO_SMALL = 'Grupa mora imati najmanje 15 članova!';
