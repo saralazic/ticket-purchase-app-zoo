@@ -1,5 +1,10 @@
 import { localStorageItems } from 'initial_data/init';
-import { Ticket, TicketData, TicketDataDto } from '../models/tickets';
+import {
+  PurchaseStatus,
+  Ticket,
+  TicketData,
+  TicketDataDto,
+} from '../models/tickets';
 
 export class TicketService {
   constructor() {}
@@ -18,13 +23,43 @@ export class TicketService {
     );
   }
 
+  public processTicket(id: string, status: boolean) {
+    let newTickets = this.getAllProcessedTickets();
+    const ticket = newTickets.find((t) => t.id === id);
+    if (!ticket) return newTickets;
+
+    ticket.status = status ? PurchaseStatus.APPROVED : PurchaseStatus.DECLINED;
+    const oldTickets = this.getAllProcessedTickets();
+    oldTickets.push(ticket);
+    this.saveProcessedTickets(oldTickets);
+
+    newTickets = newTickets.filter((t) => t.id !== id);
+    this.saveTicketsToProcess(newTickets);
+    return newTickets;
+  }
+
   private getAllProcessedTickets(): TicketDataDto[] {
     const tickets = localStorage.getItem(localStorageItems.PROCESSED_TICKETS);
     return tickets === null ? [] : JSON.parse(tickets);
   }
-  private getAllTicketsForProcessing(): TicketDataDto[] {
+
+  public getAllTicketsForProcessing(): TicketDataDto[] {
     const tickets = localStorage.getItem(localStorageItems.TICKETS_TO_PROCESS);
     return tickets === null ? [] : JSON.parse(tickets);
+  }
+
+  private saveTicketsToProcess(tickets: TicketDataDto[]) {
+    localStorage.setItem(
+      localStorageItems.TICKETS_TO_PROCESS,
+      JSON.stringify(tickets)
+    );
+  }
+
+  private saveProcessedTickets(tickets: TicketDataDto[]) {
+    localStorage.setItem(
+      localStorageItems.PROCESSED_TICKETS,
+      JSON.stringify(tickets)
+    );
   }
 }
 

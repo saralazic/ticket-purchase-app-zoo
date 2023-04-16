@@ -1,1 +1,33 @@
-<p>operate-tickets works!</p>
+<!DOCTYPE html>
+<html lang="en" class="bg">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><link rel="stylesheet" href="./operate-tickets.component.css">
+  <link href="https://fonts.cdnfonts.com/css/baloo-bhai-2" rel="stylesheet">
+</head>
+<body>   
+  <div>
+    <div>
+      <app-header></app-header>
+    </div>
+  </div>
+  <div>
+    <table>
+        <tbody>
+          <ng-container *ngFor="let row of ticketsToOperate">
+              <tr>
+                  <td> 
+                   <p *ngIf="row.request.zoo+row.request.aquarium+row.request.feeding+row.request.full < 2"> {{row.username}} želi da kupi 1 kartu za odrasle po ceni od {{row.request.price}} dinara</p>
+                  </td>
+                  <td> <button>ODBIJ</button> </td>
+                  <td> <button>ODOBRI</button> </td>
+              </tr>
+          </ng-container>
+        </tbody>
+      </table>
+  </div>
+  <div class="footer">
+    <app-footer></app-footer>
+  </div>
+</body>  
+</html> 
