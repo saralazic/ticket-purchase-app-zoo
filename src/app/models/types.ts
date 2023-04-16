@@ -13,6 +13,10 @@ export enum PRICES {
   ADULT_AQ = 1000,
   ADULT_FEED = 1200,
   ADULT_FULL = 1500,
+  GROUP_ZOO = 500,
+  GROUP_AQ = 700,
+  GROUP_FEED = 1000,
+  GROUP_FULL = 1200,
 }
 
 export enum TICKET_TYPE {
