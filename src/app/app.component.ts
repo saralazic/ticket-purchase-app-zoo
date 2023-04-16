@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { initializeLocalStorage } from 'initial_data/init';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Zoo vrt Pandica';
+
+  ngOnInit() {
+    initializeLocalStorage();
+  }
 
   constructor() {}
 }
