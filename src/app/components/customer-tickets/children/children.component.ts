@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { POSITIVE_MESSAGE } from 'src/app/constants/constants';
 import { INVALID_TICKET_INPUT } from 'src/app/constants/errors';
 import { TicketData } from 'src/app/models/tickets';
 import { PRICES, PROMO_CODES, TICKET_TYPE } from 'src/app/models/types';
@@ -148,5 +149,3 @@ export class ChildrenComponent {
     return { zoo, aq, feed, full };
   }
 }
-
-const POSITIVE_MESSAGE = 'Vaš zahtev je prosleđen na obradu.Hvala :)';
