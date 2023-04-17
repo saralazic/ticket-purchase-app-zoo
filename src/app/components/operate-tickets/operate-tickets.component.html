@@ -11,16 +11,20 @@
       <app-header></app-header>
     </div>
   </div>
-  <div>
-    <table>
+  <div class="content">
+    <table class = "position_table">
         <tbody>
           <ng-container *ngFor="let row of ticketsToOperate">
               <tr>
-                  <td> 
-                   <p *ngIf="row.request.zoo+row.request.aquarium+row.request.feeding+row.request.full < 2"> {{row.username}} želi da kupi 1 kartu za odrasle po ceni od {{row.request.price}} dinara</p>
+                  <td width = "900px"> 
+                   <p id="{{row.id}}">{{generateText(row)}}</p>
                   </td>
-                  <td> <button>ODBIJ</button> </td>
-                  <td> <button>ODOBRI</button> </td>
+                
+                  <td> <button mat-raised class="btn_decline" id = "decline_{{row.id}}" (click)="process(row.id,false)"> ODBIJ  </button> </td>
+                  <td> <button mat-raised class="btn_approve" id="approve_{{row.id}}" (click)="process(row.id,true)"> ODOBRI </button> </td>
+              </tr>
+              <tr color="#eccaca">
+                {{error}}
               </tr>
           </ng-container>
         </tbody>

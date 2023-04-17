@@ -5,6 +5,7 @@ import {
   TicketData,
   TicketDataDto,
 } from '../models/tickets';
+import { sleep } from '../utilities';
 
 export class TicketService {
   constructor() {}
@@ -24,7 +25,8 @@ export class TicketService {
   }
 
   public processTicket(id: string, status: boolean) {
-    let newTickets = this.getAllProcessedTickets();
+    let newTickets = this.getAllTicketsForProcessing();
+
     const ticket = newTickets.find((t) => t.id === id);
     if (!ticket) return newTickets;
 
@@ -40,12 +42,12 @@ export class TicketService {
 
   private getAllProcessedTickets(): TicketDataDto[] {
     const tickets = localStorage.getItem(localStorageItems.PROCESSED_TICKETS);
-    return tickets === null ? [] : JSON.parse(tickets);
+    return tickets ? JSON.parse(tickets) : [];
   }
 
   public getAllTicketsForProcessing(): TicketDataDto[] {
     const tickets = localStorage.getItem(localStorageItems.TICKETS_TO_PROCESS);
-    return tickets === null ? [] : JSON.parse(tickets);
+    return tickets ? JSON.parse(tickets) : [];
   }
 
   private saveTicketsToProcess(tickets: TicketDataDto[]) {

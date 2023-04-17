@@ -61,4 +61,41 @@ body, html {
 p{
     color: #003300;
     background-color: white;
+    font-size: 25px;
+}
+
+.content{
+    height: 85%;
+    overflow-y: auto;
+}
+
+.btn_approve{
+    width: 150px;
+    font-size: 25px;
+    color: #003300;
+    background-color: #dae1ba;
+}
+
+.btn_approve:disabled{
+    background-color: gray;
+}
+
+.btn_decline{
+    width: 150px;
+    font-size: 25px;
+    color: #330000;
+    background-color: #eccaca;
+}
+
+.btn_decline:disabled{
+    background-color: gray;
+}
+
+.position_table {
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+td{
+    padding-right: 15px;
 }
