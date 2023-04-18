@@ -5,7 +5,6 @@ import {
   TicketData,
   TicketDataDto,
 } from '../models/tickets';
-import { sleep } from '../utilities';
 
 export class TicketService {
   constructor() {}
