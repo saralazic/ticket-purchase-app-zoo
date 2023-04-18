@@ -1,13 +1,11 @@
 import { initializeLocalStorage, localStorageItems } from 'initial_data/init';
 import { User, UserCredentials, UserData, UserType } from '../models/user';
-import { userService } from './userService';
+import { userService } from './user.service';
 import { UserWithType } from './../models/user';
 import { RegisterErrors } from '../constants/errors';
 
 export class AuthService {
-  constructor() {
-    initializeLocalStorage();
-  }
+  constructor() {}
 
   login(credentials: UserCredentials): User | null {
     if (
