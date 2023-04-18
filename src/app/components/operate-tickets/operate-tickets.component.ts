@@ -29,7 +29,7 @@ export class OperateTicketsComponent {
       (<HTMLInputElement>document.getElementById(id)).style.backgroundColor =
         status ? '#dae1ba' : '#eccaca';
       this.manageButton(id);
-      await sleep(3000); // sleep 3 seconds
+      await sleep(1000); // sleep 3 seconds
 
       this.ticketsToOperate = ticketService.processTicket(id, status);
       window.location.reload();
