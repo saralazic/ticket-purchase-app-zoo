@@ -14,7 +14,7 @@ import { AboutComponent } from './components/about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TicketsComponent } from './components/customer-tickets/tickets/tickets.component';
 import { EventsComponent } from './components/events/events.component';
-import { AnimalsComponent } from './components/animals/animals.component';
+import { AnimalsComponent } from './components/animals-all/animals/animals.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { AccountComponent } from './components/account/account.component';
 import { OperateTicketsComponent } from './components/operate-tickets/operate-tickets.component';
@@ -22,6 +22,8 @@ import { OperateAnimalsComponent } from './components/operate-animals/operate-an
 import { ChildrenComponent } from './components/customer-tickets/children/children.component';
 import { AdultsComponent } from './components/customer-tickets/adults/adults.component';
 import { GroupComponent } from './components/customer-tickets/group/group.component';
+import { AnimalsNextComponent } from './components/animals-all/animals-next/animals-next.component';
+import { AnimalPageComponent } from './components/animals-all/animal-page/animal-page.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { GroupComponent } from './components/customer-tickets/group/group.compon
     ChildrenComponent,
     AdultsComponent,
     GroupComponent,
+    AnimalsNextComponent,
+    AnimalPageComponent,
   ],
   imports: [
     BrowserModule,
