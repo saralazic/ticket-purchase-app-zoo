@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { POSITIVE_MESSAGE } from 'src/app/constants/constants';
 import { GROUP_TO_SMALL, INVALID_TICKET_INPUT } from 'src/app/constants/errors';
 import { TicketData } from 'src/app/models/tickets';
-import { PRICES, TICKET_TYPE } from 'src/app/models/types';
+import { PRICES, TICKET_TYPE } from 'src/app/models/enums';
 import { authService } from 'src/app/services/auth.service';
 import { ticketService } from 'src/app/services/tickets.service';
 

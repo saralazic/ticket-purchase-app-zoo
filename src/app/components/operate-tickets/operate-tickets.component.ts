@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { PurchaseStatus, TicketDataDto } from 'src/app/models/tickets';
-import { PROMO_CODES, TICKET_TYPE } from 'src/app/models/types';
+import { PROMO_CODES, TICKET_TYPE } from 'src/app/models/enums';
 import { ticketService } from 'src/app/services/tickets.service';
 import { sleep } from 'src/app/utilities';
 

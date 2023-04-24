@@ -24,6 +24,7 @@ import { AdultsComponent } from './components/customer-tickets/adults/adults.com
 import { GroupComponent } from './components/customer-tickets/group/group.component';
 import { AnimalsNextComponent } from './components/animals-all/animals-next/animals-next.component';
 import { AnimalPageComponent } from './components/animals-all/animal-page/animal-page.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { AnimalPageComponent } from './components/animals-all/animal-page/animal
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

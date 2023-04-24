@@ -1,5 +1,5 @@
 import { v4 as uuid } from 'uuid';
-import { PROMO_CODES, TICKET_TYPE } from './types';
+import { PROMO_CODES, TICKET_TYPE } from './enums';
 
 export class Ticket {
   private id: string;

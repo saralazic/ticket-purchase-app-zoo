@@ -14,38 +14,44 @@
 
     <div class="grid-container">
       <div class="item1">
-          <img src="../../../../assets/images/giant_panda.png" alt="giant_panda" (click)="displayAnimal(0)">
-          Džinovska panda
+        <img src="{{items[0].img}}" alt="{{items[0].specie}}" id="item0" (click)="displayAnimal(0)">
+        {{items[0].specie}}
       </div>
       <div class="item2"></div>
       <div class="item3"></div>  
       <div class="item4">
-        <img src="../../../../assets/images/red_panda.jpg" alt="red_panda" (click)="displayAnimal(1)">
-        Crvena Panda
+        <img src="{{items[1].img}}" alt="{{items[1].specie}}" id="item1" (click)="displayAnimal(1)">
+        {{items[1].specie}}
       </div>
       <div class="item5">            
-        <img src="../../../../assets/images/rabbit.png" alt="rabbit" (click)="displayAnimal(2)">
-        Patuljasti zec
+        <img src="{{items[2].img}}" alt="{{items[2].specie}}" id="item2" (click)="displayAnimal(2)">
+        {{items[2].specie}}
       </div>
       <div class="item6"></div>
       <div class="item7"></div>
       <div class="item8">
-        <img src="../../../../assets/images/elephant.jpg" alt="elephant" (click)="displayAnimal(3)">
-        Afrički slon
+        <img src="{{items[3].img}}" alt="{{items[3].specie}}" id="item3" (click)="displayAnimal(3)">
+        {{items[3].specie}}
       </div>  
       <div class="item9">
-        <img src="../../../../assets/images/penguin.jpg" alt="penguin" (click)="displayAnimal(4)">
-        Kraljevski pingvin
+        <img src="{{items[4].img}}" alt="{{items[4].specie}}" id="item4" (click)="displayAnimal(4)">
+        {{items[4].specie}}
       </div>
       <div class="item10"></div>
     </div>
 
   </div>
   <div class="footer">
-    <div class="next">
-      <button mat-fab extended onclick="location.href = '/animals-next';" class="icon_button">
-        <span>next &nbsp;&nbsp; ></span>
-     </button>
+    <div class="next">   
+      <mat-paginator [length]="animals.length"
+        class="paginator"
+        [pageSize]="5"
+        [pageSizeOptions]="[]"
+        [pageIndex]="pageIndex"
+        aria-label="Select page"
+        (page)="pageChanged($event)"
+        >
+      </mat-paginator>
     </div>
     <app-footer></app-footer>
   </div>

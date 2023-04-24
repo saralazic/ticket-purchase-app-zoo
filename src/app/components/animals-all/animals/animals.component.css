@@ -122,10 +122,20 @@ img{
 
 .next {
     text-align: center;
+    align-content: center;
+    align-items: center;
     margin-bottom: 0px;
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .mat_icon{
     vertical-align: right;
+}
+
+.paginator{
+    width: 400px;
+    background-color: transparent;
+
 }
