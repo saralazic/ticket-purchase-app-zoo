@@ -17,6 +17,9 @@ export function initializeLocalStorage() {
       localStorageItems.TICKETS_TO_PROCESS,
       JSON.stringify(TICKETS)
     );
+
+  if (!localStorage.getItem(localStorageItems.ANIMALS))
+    localStorage.setItem(localStorageItems.ANIMALS, JSON.stringify(ANIMALS));
 }
 
 const USERS_FULL_DATA = [
@@ -85,10 +88,132 @@ const TICKETS = [
   },
 ];
 
+const PANDA = {
+  specie: 'Džinovska panda',
+  latin: 'Ailuropoda melanoleuca',
+  descent: 'Kina',
+  population: '2000',
+  lifespan: '20 godina',
+  comments: [
+    { username: 'sara', comment: 'Volim pande' },
+    {
+      username: 'mina',
+      comment: 'Da li su dzinovske pande jos uvek ugrozena vrsta?',
+    },
+  ],
+};
+
+const RED_PANDA = {
+  specie: 'Crvena panda',
+  latin: 'Ailurus fulgens',
+  descent: 'Nepal, Kina',
+  population: '2500',
+  lifespan: '8-15 godina',
+  comments: [{ username: 'sara', comment: 'Prelepi su' }],
+};
+
+const RABBIT = {
+  specie: 'Patuljasti zec',
+  latin: 'Oryctolagus cuniculus domesticus',
+  descent: 'Južna Evropa',
+  population: 'ne postoji adekvatna procena',
+  lifespan: '6-12 godina',
+  comments: [
+    { username: 'sara', comment: 'Obožavam kuniće, prelepi su' },
+    {
+      username: 'mina',
+      comment:
+        'Postoji li deo gde mogu da se maze zivotinje poput domacih kunica?',
+    },
+    {
+      username: 'Zoo vrt Pandica',
+      comment:
+        'Poštovana, za sada ne postoji ali svidja nam se zamisao i u budućem periodu će najverovatnije biti ostvarena',
+    },
+  ],
+};
+
+const ELEPHANT = {
+  specie: 'Afrički slon',
+  latin: 'Loxodonta africana',
+  descent: 'Afrika',
+  population: 'oko 40 hiljada',
+  lifespan: 'oko 70 godina',
+  comments: [],
+};
+
+const PENGUIN = {
+  specie: 'Kraljevski pingvin',
+  latin: 'Aptenodytes patagonicus',
+  descent: 'ostrva sub-Antarktika',
+  population: '2,23 miliona parova',
+  lifespan: '15-25 godina',
+  comments: [],
+};
+
+const HIPPO = {
+  specie: 'Nilski konj',
+  latin: 'Hippopotamus amphibius',
+  descent: 'Severna Afrika i Evropa',
+  population: 'oko 120 hiljada',
+  lifespan: '40-50 godina',
+  comments: [],
+};
+
+const MONKEY = {
+  specie: 'Tomasov langur',
+  latin: 'Presbytis thomasi',
+  descent: 'Severna Sumatra, Indonezija',
+  population: '550 do 700',
+  lifespan: 'do 20 godina',
+  comments: [],
+};
+
+const FLAMINGO = {
+  specie: 'Ružičasti ﬂamingo',
+  latin: 'Phoenicopterus',
+  descent: 'Afrika, južna Azija, južna Evropa',
+  population: 'između 1.5 i 2.5 miliona',
+  lifespan: '20-30 godina, u zatočeništvu do 50',
+  comments: [],
+};
+
+const GIRAFFE = {
+  specie: 'Žirafa',
+  latin: 'Giraffa camelopardalis',
+  descent: 'Od Čada do Južne Afrike',
+  population: '110 do 150 hiljada jedinki',
+  lifespan: '220-25 godina, u zatočeništvu do 28',
+  comments: [],
+};
+
+const FROG = {
+  specie: 'Staklena žaba',
+  latin: 'Centrolenidae',
+  descent: 'Južna Amerika',
+  population: 'nema informacija',
+  lifespan: 'do 14 godina',
+  comments: [],
+};
+
+const ANIMALS = [
+  PANDA,
+  RED_PANDA,
+  RABBIT,
+  ELEPHANT,
+  PENGUIN,
+  HIPPO,
+  MONKEY,
+  FLAMINGO,
+  GIRAFFE,
+  FROG,
+];
+
 export enum localStorageItems {
   USERS = 'users_full_data',
   EMPLOYEES = 'employees',
   LOGGED_IN = 'logged_in',
   TICKETS_TO_PROCESS = 'tickets_requests',
   PROCESSED_TICKETS = 'processed_tickets',
+  ANIMALS = 'animals',
 }
