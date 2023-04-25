@@ -24,3 +24,16 @@ export enum TICKET_TYPE {
   CHILDREN = 'children',
   GROUP = 'group',
 }
+
+export enum ANIMAL {
+  HIPPO = 'hippo',
+  MONKEY = 'monkey',
+  FLAMINGO = 'flamingo',
+  GIRAFFE = 'giraffe',
+  FROG = 'frog',
+  PANDA = 'panda',
+  RED_PANDA = 'red_panda',
+  RABBIT = 'rabbit',
+  ELEPHANT = 'elephant',
+  PENGUIN = 'penguin',
+}
