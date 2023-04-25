@@ -1,1 +1,36 @@
-<p>animal-page works!</p>
+<!DOCTYPE html>
+<html lang="en" class="bg">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><link rel="stylesheet" href="./animal-page.component.css">
+  <link href="https://fonts.cdnfonts.com/css/baloo-bhai-2" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>   
+  <div>
+    <div class = "header">
+        <button mat-fab extended class="icon_button"  onclick="location.href = '/animals';">
+            <mat-icon>arrow_back</mat-icon>
+            NAZAD
+        </button>
+    </div>
+    <div class = center>
+        <div class="container" *ngIf="animal !== null">
+            <div class="left">
+                <img src="{{animal.img}}" alt="{{animal.specie}}" id="photo">
+            </div>
+            <div class="right">
+                <div class="description">
+                    Vrsta: {{animal.specie}} <br>
+                    Latinski naziv: {{animal.latin}} <br>
+                    Poreklo: {{animal.descent}} <br>
+                    Populacija: {{animal.population}} <br>
+                    Životni vek: {{animal.lifespan}}
+                </div>
+            </div>
+          </div>
+    </div>
+   
+    </div>
+</body>  
+</html>
