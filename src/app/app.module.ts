@@ -22,7 +22,6 @@ import { OperateAnimalsComponent } from './components/operate-animals/operate-an
 import { ChildrenComponent } from './components/customer-tickets/children/children.component';
 import { AdultsComponent } from './components/customer-tickets/adults/adults.component';
 import { GroupComponent } from './components/customer-tickets/group/group.component';
-import { AnimalsNextComponent } from './components/animals-all/animals-next/animals-next.component';
 import { AnimalPageComponent } from './components/animals-all/animal-page/animal-page.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 
@@ -45,7 +44,6 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     ChildrenComponent,
     AdultsComponent,
     GroupComponent,
-    AnimalsNextComponent,
     AnimalPageComponent,
   ],
   imports: [

@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
 import { LoginComponent } from './components/authorize/login/login.component';
-import { UserType } from './models/user';
 import { RegisterComponent } from './components/authorize/register/register.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { AboutComponent } from './components/about/about.component';
@@ -16,7 +14,6 @@ import { OperateAnimalsComponent } from './components/operate-animals/operate-an
 import { AdultsComponent } from './components/customer-tickets/adults/adults.component';
 import { ChildrenComponent } from './components/customer-tickets/children/children.component';
 import { GroupComponent } from './components/customer-tickets/group/group.component';
-import { AnimalsNextComponent } from './components/animals-all/animals-next/animals-next.component';
 import { AnimalPageComponent } from './components/animals-all/animal-page/animal-page.component';
 
 const routes: Routes = [
@@ -51,10 +48,6 @@ const routes: Routes = [
   {
     path: 'animals',
     component: AnimalsComponent,
-  },
-  {
-    path: 'animals-next',
-    component: AnimalsNextComponent,
   },
   {
     path: 'notifications',

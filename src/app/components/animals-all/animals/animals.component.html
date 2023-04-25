@@ -15,27 +15,45 @@
     <div class="grid-container">
       <div class="item1">
         <img src="{{items[0].img}}" alt="{{items[0].specie}}" id="item0" (click)="displayAnimal(0)">
-        {{items[0].specie}}
+        <div>
+          {{items[0].specie}}
+        </div>
       </div>
       <div class="item2"></div>
       <div class="item3"></div>  
       <div class="item4">
-        <img src="{{items[1].img}}" alt="{{items[1].specie}}" id="item1" (click)="displayAnimal(1)">
-        {{items[1].specie}}
+        <div *ngIf = "items.length>1">
+          <img src="{{items[1].img}}" alt="{{items[1].specie}}" id="item1" (click)="displayAnimal(1)">
+          <div>
+            {{items[1].specie}}
+          </div>
+        </div>
       </div>
-      <div class="item5">            
-        <img src="{{items[2].img}}" alt="{{items[2].specie}}" id="item2" (click)="displayAnimal(2)">
-        {{items[2].specie}}
+      <div class="item5">        
+        <div *ngIf = "items.length>2">    
+          <img src="{{items[2].img}}" alt="{{items[2].specie}}" id="item2" (click)="displayAnimal(2)">
+          <div>
+            {{items[2].specie}}
+          </div>
+        </div>
       </div>
       <div class="item6"></div>
       <div class="item7"></div>
       <div class="item8">
-        <img src="{{items[3].img}}" alt="{{items[3].specie}}" id="item3" (click)="displayAnimal(3)">
-        {{items[3].specie}}
+        <div *ngIf = "items.length>3">
+          <img src="{{items[3].img}}" alt="{{items[3].specie}}" id="item3" (click)="displayAnimal(3)">
+          <div>
+            {{items[3].specie}}
+          </div>
+        </div>
       </div>  
       <div class="item9">
-        <img src="{{items[4].img}}" alt="{{items[4].specie}}" id="item4" (click)="displayAnimal(4)">
-        {{items[4].specie}}
+        <div *ngIf = "items.length>4">
+          <img src="{{items[4].img}}" alt="{{items[4].specie}}" id="item4" (click)="displayAnimal(4)">
+          <div>
+            {{items[4].specie}}
+          </div>
+        </div>
       </div>
       <div class="item10"></div>
     </div>
