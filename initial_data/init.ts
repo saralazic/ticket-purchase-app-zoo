@@ -98,14 +98,16 @@ const PANDA = {
   img: '../../../../assets/images/giant_panda.png',
   comments: [
     {
-      id: uuid(),
-      username: 'sara',
-      comment: 'Volim pande',
+      author: 'sara',
+      text: 'Volim pande',
+      replies: [],
+      date: new Date(2023, 4, 20),
     },
     {
-      id: uuid(),
-      username: 'mina',
-      comment: 'Da li su dzinovske pande jos uvek ugrozena vrsta?',
+      author: 'mina',
+      text: 'Da li su dzinovske pande jos uvek ugrozena vrsta?',
+      replies: [],
+      date: new Date(2023, 4, 23),
     },
   ],
 };
@@ -117,10 +119,16 @@ const RED_PANDA = {
   population: '2500',
   lifespan: '8-15 godina',
   img: '../../../../assets/images/red_panda.jpg',
-  comments: [{ id: uuid(), username: 'sara', comment: 'Prelepi su' }],
+  comments: [
+    {
+      author: 'sara',
+      text: 'Prelepi su',
+      replies: [],
+      date: new Date(2023, 4, 20),
+    },
+  ],
 };
 
-const parent_id = uuid();
 const RABBIT = {
   specie: 'Patuljasti zec',
   latin: 'Oryctolagus cuniculus domesticus',
@@ -129,19 +137,24 @@ const RABBIT = {
   lifespan: '6-12 godina',
   img: '../../../../assets/images/rabbit.png',
   comments: [
-    { id: uuid(), username: 'sara', comment: 'Obožavam kuniće, prelepi su' },
     {
-      id: parent_id,
-      username: 'mina',
-      comment:
-        'Postoji li deo gde mogu da se maze zivotinje poput domacih kunica?',
+      author: 'sara',
+      text: 'Obožavam kuniće, prelepi su',
+      date: new Date(2023, 4, 24),
+      replies: [],
     },
     {
-      id: uuid(),
-      parent_id: parent_id,
-      username: 'Zoo vrt Pandica',
-      comment:
-        'Poštovana, za sada ne postoji ali svidja nam se zamisao i u budućem periodu će najverovatnije biti ostvarena',
+      author: 'mina',
+      text: 'Postoji li deo gde mogu da se maze zivotinje poput domacih kunica?',
+      replies: [
+        {
+          author: 'Zoo vrt Pandica',
+          text: 'Poštovana, za sada ne postoji ali svidja nam se zamisao i u budućem periodu će najverovatnije biti ostvarena',
+          replies: [],
+          date: new Date(2023, 4, 26),
+        },
+      ],
+      date: new Date(2023, 4, 26),
     },
   ],
 };

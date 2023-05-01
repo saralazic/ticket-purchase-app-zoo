@@ -27,10 +27,74 @@
                     Populacija: {{animal.population}} <br>
                     Životni vek: {{animal.lifespan}}
                 </div>
-            </div>
-          </div>
+                <br>
+                <div class="comment-section">
+                  <div class="input_comment">
+                    <div class="container_input"> <!-- This is the wrapper div around the text input -->
+                        <input type="text" name = "newComment" [(ngModel)]="newComment" placeholder=" Komentar"/>
+                    </div>
+                    <input margin-left="5px" type="button" value="Objavi" class="comment-btn" (click)="addComment()" />
+                  </div>
+
+                  <br>
+                  
+                  <div *ngFor="let comment of animal.comments;let i=index">
+                    <div class="grid-container-comment">
+                      <div class="avatar_container">
+                        <button mat-fab class="avatar">
+                          {{initial(comment.author)}}
+                        </button>
+                      </div> 
+                      <div class="name">
+                        <b>{{comment.author}}</b>
+                      </div>
+                      <div class = "text">
+                        {{comment.text}}
+                      </div>
+                      <div class="empty-r"></div>
+                      <div class="reply">
+                        <button  class="grey-btn" (click)="setDisplayReply(i)">
+                          Odgovori
+                        </button>
+                      </div>
+                    </div>
+
+                    <div *ngIf="displayReply === i" class = "highest_reply_container">
+
+                      <table class="container_reply">
+                        <tr>
+                          <td width="40px"></td>
+                          <td>
+                            <input type="text" name = "reply" [(ngModel)]="reply" placeholder="" class="input-cell"/>
+                          </td>
+                          <td class = "align-right">
+                            <button class="button-rpl" (click)="replyToComment(i)">Objavi</button>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+
+                    <div *ngFor=" let reply of comment.replies">
+                      <div class = "grid-container-reply">
+                        <div class="empty">&emsp; &emsp; </div>
+                        <div class="avatar_cotainer">
+                          <button mat-fab class="avatar">
+                            {{initial(reply.author)}}
+                          </button>
+                        </div> 
+                        <div class="name-r">
+                          <b>{{reply.author}}</b> <br>
+                        </div>
+                        <div class = "text-r">
+                          {{reply.text}}
+                        </div>
+                    </div>
+                  </div>
+         </div>
+        </div>
+      </div>
     </div>
-   
-    </div>
+  </div>
+</div>
 </body>  
 </html>

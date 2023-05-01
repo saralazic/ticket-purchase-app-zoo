@@ -24,6 +24,11 @@ import { AdultsComponent } from './components/customer-tickets/adults/adults.com
 import { GroupComponent } from './components/customer-tickets/group/group.component';
 import { AnimalPageComponent } from './components/animals-all/animal-page/animal-page.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { AvatarModule } from 'ngx-avatar';
 
 @NgModule({
   declarations: [
@@ -54,6 +59,12 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatButtonModule,
     MatIconModule,
     MatPaginatorModule,
+    FormsModule,
+    MatCardModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    AvatarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

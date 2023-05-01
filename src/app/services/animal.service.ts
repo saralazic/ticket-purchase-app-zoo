@@ -8,6 +8,13 @@ export class AnimalService {
     localStorage.setItem(localStorageItems.ANIMALS, JSON.stringify(animals));
   }
 
+  public saveAnimalByIndex(animal: Animal | null, index: number) {
+    const all = this.getAnimals();
+    if (index < 0 || index >= all.length) return;
+    all[index] = animal;
+    this.saveAnimals(all);
+  }
+
   public getAnimalByIndex(index: number): Animal | null {
     if (index < 0) return null;
     const allAnimals = this.getAnimals();
