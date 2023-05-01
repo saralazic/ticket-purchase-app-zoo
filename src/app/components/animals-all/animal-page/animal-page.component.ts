@@ -53,7 +53,6 @@ export class AnimalPageComponent {
   }
 
   replyToComment(comment_index: number): void {
-    console.log('POZVANO ' + comment_index);
     const author = this.authService.getLoggedUser();
     if (this.reply) {
       this.animal?.comments[comment_index].replies.push({
