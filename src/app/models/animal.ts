@@ -9,8 +9,8 @@ export interface Animal {
 }
 
 export interface Comment {
-  id: string;
-  username: string;
-  comment: 'string';
-  parent_id?: string;
+  author: string;
+  date: Date;
+  text: string;
+  replies: Comment[];
 }

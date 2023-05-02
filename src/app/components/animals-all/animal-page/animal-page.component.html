@@ -1,1 +1,100 @@
-<p>animal-page works!</p>
+<!DOCTYPE html>
+<html lang="en" class="bg">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><link rel="stylesheet" href="./animal-page.component.css">
+  <link href="https://fonts.cdnfonts.com/css/baloo-bhai-2" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>   
+  <div>
+    <div class = "header">
+        <button mat-fab extended class="icon_button"  onclick="location.href = '/animals';">
+            <mat-icon>arrow_back</mat-icon>
+            NAZAD
+        </button>
+    </div>
+    <div class = center>
+        <div class="container" *ngIf="animal !== null">
+            <div class="left">
+                <img src="{{animal.img}}" alt="{{animal.specie}}" id="photo">
+            </div>
+            <div class="right">
+                <div class="description">
+                    Vrsta: {{animal.specie}} <br>
+                    Latinski naziv: {{animal.latin}} <br>
+                    Poreklo: {{animal.descent}} <br>
+                    Populacija: {{animal.population}} <br>
+                    Životni vek: {{animal.lifespan}}
+                </div>
+                <br>
+                <div class="comment-section">
+                  <div class="input_comment">
+                    <div class="container_input"> <!-- This is the wrapper div around the text input -->
+                        <input type="text" name = "newComment" [(ngModel)]="newComment" placeholder=" Komentar"/>
+                    </div>
+                    <input margin-left="5px" type="button" value="Objavi" class="comment-btn" (click)="addComment()" />
+                  </div>
+
+                  <br>
+                  
+                  <div *ngFor="let comment of animal.comments;let i=index">
+                    <div class="grid-container-comment">
+                      <div class="avatar_container">
+                        <button mat-fab class="avatar">
+                          {{initial(comment.author)}}
+                        </button>
+                      </div> 
+                      <div class="name">
+                        <b>{{comment.author}}</b>
+                      </div>
+                      <div class = "text">
+                        {{comment.text}}
+                      </div>
+                      <div class="empty-r"></div>
+                      <div class="reply">
+                        <button  class="grey-btn" (click)="setDisplayReply(i)">
+                          Odgovori
+                        </button>
+                      </div>
+                    </div>
+
+                    <div *ngIf="displayReply === i" class = "highest_reply_container">
+
+                      <table class="container_reply">
+                        <tr>
+                          <td width="40px"></td>
+                          <td>
+                            <input type="text" name = "reply" [(ngModel)]="reply" placeholder="" class="input-cell"/>
+                          </td>
+                          <td class = "align-right">
+                            <button class="button-rpl" (click)="replyToComment(i)">Objavi</button>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+
+                    <div *ngFor=" let reply of comment.replies">
+                      <div class = "grid-container-reply">
+                        <div class="empty">&emsp; &emsp; </div>
+                        <div class="avatar_cotainer">
+                          <button mat-fab class="avatar">
+                            {{initial(reply.author)}}
+                          </button>
+                        </div> 
+                        <div class="name-r">
+                          <b>{{reply.author}}</b> <br>
+                        </div>
+                        <div class = "text-r">
+                          {{reply.text}}
+                        </div>
+                    </div>
+                  </div>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>  
+</html>

@@ -1,0 +1,212 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Baloo Bhai 2', sans-serif;
+}
+
+.bg {
+    background-image: url("../../../../assets/images/children_bg.jpg");
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    margin: 0;
+    padding: 0%;
+}
+
+.icon_button {
+    background-color:gray;
+    outline: none;
+    border: none;
+}
+
+.header{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.container {
+    background-color: white;
+    display: flex;
+    height: 70vh; /* 80% of the viewport height */
+    width: 70vw; /* 80% of the viewport width */
+    flex-direction: row; /* set flex-direction to row */
+    justify-content: flex-start;
+
+  }
+  
+  .left, .right {
+    height: 100%; /* set height to 100% */
+  }
+  
+  .left {
+    width: 38%;
+  }
+  
+  .right {
+    width: 62%;
+    background-color: white; /* set background color for right div */
+    overflow-y: auto;
+  }
+  
+
+img {
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.description{
+    color: black;
+    font-size: 25px;
+    margin-left: 5px;
+}
+
+.avatar {
+     width: 35px;
+     height: 35px;
+     line-height: 35px;
+     font-size: 15px;
+     background-color: gray;
+     font-weight: lighter;
+}
+.avatar::ng-deep .mat-button-wrapper{
+         line-height: 35px;
+         padding: 0;
+}
+
+.grid-container-comment {
+  justify-content:left ;
+  column-gap: 5px;
+  max-width: 800px;
+  margin-left: 5px;
+  display: grid;
+  grid-template-areas:
+      'avatar name'
+      'avatar text'
+      'avatar  text'
+      'empty-c reply';
+
+}
+
+.grid-container-reply {
+  justify-content:left ;
+  column-gap: 5px;
+  max-width: 800px;
+  margin-left: 5px;
+  display: grid;
+  margin-top: 5px;
+  grid-template-areas:
+      'empty avatar name-r'
+      'empty avatar text-r'
+      'empty avatar text-r';
+}
+
+.empty { grid-area: empty; width: 30px; }
+.avatar_container { grid-area: avatar; width: 10%; }
+.empty-r {
+    grid-area: empty-c; width: 10%;
+}
+.reply{
+  grid-area: reply;  
+}
+
+.name { grid-area: name; text-align: left; }
+.text {
+  color: gray; 
+  font-weight: 100;
+  grid-area: text; 
+  text-align: left;
+}
+
+.name-r{
+  grid-area: name-r; text-align: left; width: 80%;
+}
+
+.text-r {
+  color: gray;
+  font-weight: 100;
+  grid-area: text-r; 
+  text-align: left;
+}
+
+.comment-section{
+  max-height: 300px; /* adjust this value to set the maximum height of the comments section */
+  overflow-y: auto;
+  min-width: 99%;
+  max-width: 98%;
+}
+
+.input_comment { display: table; font-size: 16px;}
+.container_input {
+    display: table-cell;
+    width: 100%;
+}
+div.container_input > input {
+    width: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.comment-btn{
+  margin-left: 10px;
+}
+
+.input_reply{ display: flex; font-size: 12px; width: 100%;}
+
+.grey-btn{
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  font-size: 10px;
+  padding: 2px 4px;
+  color: rgb(85, 84, 84);
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.comment-button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  font-size: 14px;
+  padding: 4px 8px;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.container_reply{
+  min-width: 100%;
+  column-gap: 0px;
+}
+.align-right{
+  text-align: right;
+  width: 1%;
+  white-space: nowrap;
+}
+
+.input-cell {
+  width: 100%;
+  white-space: nowrap;
+}
+
+.input-cell input {
+  width: 100%;
+  box-sizing: border-box;
+}

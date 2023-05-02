@@ -33,45 +33,7 @@ body, html {
     font-size: 30px;
     text-align: left;
 }
-/* 
-.wrapper {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-gap: 10px;
-    width: 100vw;
-    height: 100vh;
-    font-family: 'Baloo Bhai 2', sans-serif;
-    margin-top: 70px;
-    margin-bottom: 70px;
-    margin-left: 100px;
-}
 
-.one_up{
-    grid-column: 1 / 2;
-    grid-row: 1;
-    background-color: blueviolet;
-}
-
-.one_down{
-    grid-column: 1 / 2;
-    grid-row: 2;
-    background-color: brown;
-}
-
-.two_up{
-    grid-column: 2;
-    grid-row: 1;
-    background-color: brown;
-}
-
-.two_down{
-    grid-column: 2;
-    grid-row: 2;
-    background-color: blueviolet;
-
-}
-*/
 
 img{
     max-width: 270px;
@@ -137,5 +99,4 @@ img{
 .paginator{
     width: 400px;
     background-color: transparent;
-
 }
