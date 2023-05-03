@@ -16,3 +16,6 @@ export const INVALID_TICKET_INPUT = 'Molimo unestite ispravan broj karata!';
 export const GROUP_TO_SMALL = 'Grupa mora imati najmanje 15 članova!';
 
 export const ANIMAL_ERROR = '404 NOT FOUND';
+
+export const ADD_ANIMAL_EMPTY = 'Sva polja moraju biti popunjena!';
+export const PHOTO_ERROR = 'Odaberite fotografiju!';

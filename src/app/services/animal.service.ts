@@ -4,8 +4,10 @@ import { Animal } from '../models/animal';
 export class AnimalService {
   constructor() {}
 
-  private saveAnimals(animals: Animal[]) {
-    localStorage.setItem(localStorageItems.ANIMALS, JSON.stringify(animals));
+  public saveNewAnimal(animal: Animal) {
+    const allAnimals = this.getAnimals();
+    allAnimals.push(animal);
+    this.saveAnimals(allAnimals);
   }
 
   public saveAnimalByIndex(animal: Animal | null, index: number) {
@@ -25,6 +27,10 @@ export class AnimalService {
   public getAnimals() {
     const animals = localStorage.getItem(localStorageItems.ANIMALS);
     return animals ? JSON.parse(animals) : [];
+  }
+
+  private saveAnimals(animals: Animal[]) {
+    localStorage.setItem(localStorageItems.ANIMALS, JSON.stringify(animals));
   }
 }
 
