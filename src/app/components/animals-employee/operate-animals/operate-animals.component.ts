@@ -50,7 +50,7 @@ export class OperateAnimalsComponent {
       descent: this.descent,
       population: this.population,
       lifespan: this.lifespan,
-      img: this.selectedImage,
+      img: this.imageUrl(this.selectedImage.src),
       comments: [],
     };
 
@@ -66,5 +66,11 @@ export class OperateAnimalsComponent {
     if (this.lifespan.length <= 0) return ADD_ANIMAL_EMPTY;
     if (!this.selectedImage) return PHOTO_ERROR;
     return null;
+  }
+
+  imageUrl(src: string) {
+    const prefix = '../../../../';
+    const sufix = src.slice('http://localhost:4200/'.length);
+    return `${prefix}${sufix}`;
   }
 }
