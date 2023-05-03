@@ -8,11 +8,17 @@ export class AnimalService {
     const allAnimals = this.getAnimals();
     allAnimals.push(animal);
     this.saveAnimals(allAnimals);
+    this.saveAddedAnimal(animal);
+  }
+
+  public getAddedAnimal(): Animal | null {
+    const animal = localStorage.getItem(localStorageItems.NEW_ANIMAL);
+    return animal ? JSON.parse(animal) : null;
   }
 
   public saveAnimalByIndex(animal: Animal | null, index: number) {
     const all = this.getAnimals();
-    if (index < 0 || index >= all.length) return;
+    if (index < 0 || index >= all.length || !animal) return;
     all[index] = animal;
     this.saveAnimals(all);
   }
@@ -24,13 +30,17 @@ export class AnimalService {
     return allAnimals[index];
   }
 
-  public getAnimals() {
+  public getAnimals(): Animal[] {
     const animals = localStorage.getItem(localStorageItems.ANIMALS);
     return animals ? JSON.parse(animals) : [];
   }
 
   private saveAnimals(animals: Animal[]) {
     localStorage.setItem(localStorageItems.ANIMALS, JSON.stringify(animals));
+  }
+
+  private saveAddedAnimal(animal: Animal) {
+    localStorage.setItem(localStorageItems.NEW_ANIMAL, JSON.stringify(animal));
   }
 }
 
