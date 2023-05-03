@@ -1,0 +1,163 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Baloo Bhai 2', sans-serif;
+  
+  }
+  
+  table
+  {
+    width: 500px;
+    text-align: center;
+  
+    border-collapse: collapse;
+  
+  }
+  
+  a{
+    color: cyan;
+  }
+  
+  label{
+    font-size: 25px;
+    color: #a7a4a4;
+  }
+  
+  h1{
+    padding-top: -50px;
+  }
+  
+  .head{
+    width: 100%;
+    text-align: right;
+    color: white;
+    font-size: 70px;
+    font-weight: bolder;
+  }
+  
+  .register_form_container{
+    width: 50%;
+    text-align: right;
+    color: white;
+    margin-top: 50px;
+  }
+  
+  .bg {
+    background-image: url("../../../assets/images/login_panda.jpg");
+    /* Full height */
+    height: 100%;
+    width: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+  
+    margin: 0;
+    padding: 0%;
+  }
+  
+  .register_form {
+    width: 85%;
+    height: 90%;
+  
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+  
+    background-color: #003300;
+  
+    text-align: left;
+  
+    margin-top: 3%;
+    margin-left: 3%;
+  }
+  
+  .headline_2{
+    font-size: 120px;
+    padding-right: 100px;
+    text-align: left;
+  }
+  
+  .form_headline {
+    font-size: 70px;
+    text-align: center;
+  }
+  
+  .baloo_bhai {
+    color: white;
+    font-family: 'Baloo Bhai 2', sans-serif;
+    font-weight: bolder;
+  }
+  
+  
+  .btn {
+    background-color: #009900;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-family: 'Baloo Bhai 2', sans-serif;
+    font-weight: bolder;
+    margin: 4px 2px;
+  
+    width: 60%;
+    height: 30px;
+    
+    background-color: #009900;
+    border-radius: 12px;
+  
+    border: none;
+    line-height: 33.33%;
+  
+  }
+  
+  .btn:disabled,
+  .btn.disabled {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  }
+  
+  .my_input {
+    background-color: #003300;
+    width: 80%;
+    height: 20px;
+    margin-left: 10%;
+    color: #a7a4a4;
+  }
+  
+  .label_column{
+    text-align: left;
+    padding-left: 100px;
+  }
+  
+  .error{
+    color: #FF6666;
+    text-align: center;
+  }
+  
+  
+  .split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 0px;
+  }
+  
+  /* Control the left side */
+  .left {
+    left: 0;
+  }
+  
+  /* Control the right side */
+  .right {
+    right: 0;
+  }
