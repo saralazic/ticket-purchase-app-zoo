@@ -6,15 +6,16 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { AboutComponent } from './components/about/about.component';
 import { TicketsComponent } from './components/customer-tickets/tickets/tickets.component';
 import { EventsComponent } from './components/events/events.component';
-import { AnimalsComponent } from './components/animals-all/animals/animals.component';
+import { AnimalsComponent } from './components/animals-customer/animals/animals.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { AccountComponent } from './components/account/account.component';
 import { OperateTicketsComponent } from './components/operate-tickets/operate-tickets.component';
-import { OperateAnimalsComponent } from './components/operate-animals/operate-animals.component';
+import { OperateAnimalsComponent } from './components/animals-employee/operate-animals/operate-animals.component';
 import { AdultsComponent } from './components/customer-tickets/adults/adults.component';
 import { ChildrenComponent } from './components/customer-tickets/children/children.component';
 import { GroupComponent } from './components/customer-tickets/group/group.component';
-import { AnimalPageComponent } from './components/animals-all/animal-page/animal-page.component';
+import { AnimalPageComponent } from './components/animals-customer/animal-page/animal-page.component';
+import { AnimalAddedComponent } from './components/animals-employee/animal-added/animal-added.component';
 
 const routes: Routes = [
   {
@@ -80,6 +81,10 @@ const routes: Routes = [
   {
     path: 'animal',
     component: AnimalPageComponent,
+  },
+  {
+    path: 'animal-added',
+    component: AnimalAddedComponent,
   },
 ];
 

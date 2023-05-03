@@ -249,4 +249,5 @@ export enum localStorageItems {
   TICKETS_TO_PROCESS = 'tickets_requests',
   PROCESSED_TICKETS = 'processed_tickets',
   ANIMALS = 'animals',
+  NEW_ANIMAL = 'new_animal',
 }

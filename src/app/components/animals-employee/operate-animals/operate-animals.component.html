@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" class="bg">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><link rel="stylesheet" href="./operate-animals.component.css">
+  <link href="https://fonts.cdnfonts.com/css/baloo-bhai-2" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>   
+  <div>
+    <div>
+      <app-header></app-header>
+    </div>
+
+    <div class="center">
+        <div class="container">
+            <div class="left">
+                <table class="left-table">
+                    <tr>
+                        <td class="labels">Naziv</td>
+                        <td class="input-cell">
+                            <input type="text" name = "specie" [(ngModel)]="specie"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="labels">Latinski <br> naziv</td>
+                        <td class="input-cell">
+                            <input type="text" name = "latin" [(ngModel)]="latin"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="labels">Poreklo</td>
+                        <td class="input-cell">
+                            <input type="text" name = "descent" [(ngModel)]="descent"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="labels">Populacija</td>
+                        <td class="input-cell">
+                            <input type="text" name = "population" [(ngModel)]="population"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="labels">Životni vek</td>
+                        <td class="input-cell"> 
+                            <input type="text" name = "lifespan" [(ngModel)]="lifespan"/>
+                        </td>
+                    </tr>
+                </table>
+               
+            </div>
+            <div class="right">
+                <div class="center_choose">
+                    Odaberi sliku:
+                </div>
+                <table class="right_table">
+                    <tr *ngFor="let row of images">
+                        <td *ngFor="let column of row">  
+                            <img src="{{column}}" class="images" (click)="addBorder($event.target)">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="btn">
+            <button class="submit" (click)="addAnimal()">Potvrdi</button>
+        </div>
+        <div class="error">
+            {{error}}
+        </div>
+    </div>
+
+
+  </div>
+  <div class="footer">
+    <app-footer></app-footer>
+  </div>
+</body>  
+</html>

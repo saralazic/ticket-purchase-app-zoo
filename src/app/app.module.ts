@@ -14,21 +14,22 @@ import { AboutComponent } from './components/about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TicketsComponent } from './components/customer-tickets/tickets/tickets.component';
 import { EventsComponent } from './components/events/events.component';
-import { AnimalsComponent } from './components/animals-all/animals/animals.component';
+import { AnimalsComponent } from './components/animals-customer/animals/animals.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { AccountComponent } from './components/account/account.component';
 import { OperateTicketsComponent } from './components/operate-tickets/operate-tickets.component';
-import { OperateAnimalsComponent } from './components/operate-animals/operate-animals.component';
+import { OperateAnimalsComponent } from './components/animals-employee/operate-animals/operate-animals.component';
 import { ChildrenComponent } from './components/customer-tickets/children/children.component';
 import { AdultsComponent } from './components/customer-tickets/adults/adults.component';
 import { GroupComponent } from './components/customer-tickets/group/group.component';
-import { AnimalPageComponent } from './components/animals-all/animal-page/animal-page.component';
+import { AnimalPageComponent } from './components/animals-customer/animal-page/animal-page.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AvatarModule } from 'ngx-avatar';
+import { AnimalAddedComponent } from './components/animals-employee/animal-added/animal-added.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { AvatarModule } from 'ngx-avatar';
     AdultsComponent,
     GroupComponent,
     AnimalPageComponent,
+    AnimalAddedComponent,
   ],
   imports: [
     BrowserModule,
