@@ -22,9 +22,7 @@ export function emailValid(email: string): boolean {
 }
 
 export function phoneValid(phone: string): boolean {
-  return (
-    /^(060|061|062|063|066|067)\d{7}$/.test(phone) || /^(0)\d{8}$/.test(phone)
-  );
+  return /^(\+)(3816)([0-9]){6,9}$/.test(phone);
 }
 
 export function otherFieldsValid(field: string): boolean {

@@ -10,36 +10,41 @@
 
 </head>
 <body>
+
 <!-- partial:index.partial.html -->
-	<div class="split right">
-	</div>
+
+	<div>
+		<div  class="split left">
+			<table class="register_form baloo_bhai">
+				<tr><td colspan="2" class="form_headline">Moj nalog</td></tr>
+				<tr><td colspan="2" class=""> <p class="email">{{email}}</p></td></tr>
+				<tr><td colspan="2"><input class="w3-input my_input" type="text" name = "username" [(ngModel)]="username"></td></tr>
+				<br>
+				<tr><td colspan="2"><input class="w3-input my_input" type="password" name="password" [(ngModel)]="password"></td></tr>
+				<br>
+				<tr><td colspan="2"><input class="w3-input my_input" type="text" name="firstName" [(ngModel)]="firstName"></td></tr>
+				<br>
+				<tr><td colspan="2"><input class="w3-input my_input" type="text" name="lastName" [(ngModel)]="lastName"></td></tr>
+				<br>				
+				<tr><td colspan="2"><input class="w3-input my_input" type="text" name="phone" [(ngModel)]="phone"></td></tr>
+				<br>	
+				<tr><td colspan="2"><input class="w3-input my_input" type="text" name="address" [(ngModel)]="address"></td></tr>
+				<br>	
+				<br>
+				<tr><td align = "center" colspan="2"><input type="submit" value="Potvrdi izmenu" class="btn" (click)="saveChange()" [disabled]="disableButton()"/></td></tr>
+				<tr><td align = "center" colspan="2"><input type="submit" value="Nazad" class="btn" (click)="return()"/></td></tr>
 	
-	<div  class="split left">
-		<table class="register_form baloo_bhai">
-			<tr><td colspan="2" class="form_headline">Moj nalog</td></tr>
-			<tr><td colspan="2"><input class="w3-input my_input" type="text" name = "username" [(ngModel)]="username"></td></tr>
-			<br>
-			<tr><td colspan="2"><input class="w3-input my_input" type="password" name="password" [(ngModel)]="password"></td></tr>
-			<br>
-			<tr><td colspan="2"><input class="w3-input my_input" type="email" name="email" [(ngModel)]="email"></td></tr>
-			<br>
-			<tr><td colspan="2"><input class="w3-input my_input" type="text" name="firstName" [(ngModel)]="firstName"></td></tr>
-			<br>
-			<tr><td colspan="2"><input class="w3-input my_input" type="text" name="lastName" [(ngModel)]="lastName"></td></tr>
-			<br>				
-			<tr><td colspan="2"><input class="w3-input my_input" type="text" name="phone" [(ngModel)]="phone"></td></tr>
-			<br>	
-			<tr><td colspan="2"><input class="w3-input my_input" type="text" name="address" [(ngModel)]="address"></td></tr>
-			<br>	
-			<br>
-			<tr><td align = "center" colspan="2"><input type="submit" value="Potvrdi izmenu" class="btn" (click)="saveChange()"/></td></tr>
-			<tr><td align = "center" colspan="2"><input type="submit" value="Nazad" class="btn" (click)="return()"/></td></tr>
+				<br>
+	
+				<tr><td colspan="2"><p class="error" align = "center"> {{message}} </p></td></tr>
+			</table>
+			<br><br>
+		</div>
 
-			<br>
+		<div class="split right logout">
+			<a href="#" class="baloo_bhai" (click)="logout()">O NAMA &nbsp;&nbsp;</a>
+		</div>
 
-			<tr><td colspan="2"><p class="error" align = "center"> {{error}} </p></td></tr>
-		</table>
-		<br><br>
 	</div>
 </body>
 </html>

@@ -22,7 +22,7 @@ export class User {
   }
 
   public setType() {
-    this.type = userService.checkIfUserIsEmployee(this.username)
+    this.type = userService.checkIfUserIsEmployee(this.email)
       ? UserType.employee
       : UserType.visitor;
   }

@@ -69,6 +69,19 @@ export class AuthService {
     return newUser;
   }
 
+  updateUser(data: UserData): void {
+    let allUsers = userService.getAllUsers();
+    let currentUserIndex = allUsers.findIndex(
+      (usr) => usr.email === data.email
+    );
+
+    if (currentUserIndex >= 0) {
+      allUsers[currentUserIndex] = data;
+      localStorage.setItem(localStorageItems.USERS, JSON.stringify(allUsers));
+      localStorage.setItem(localStorageItems.LOGGED_IN, JSON.stringify(data));
+    }
+  }
+
   logout() {
     localStorage.removeItem(localStorageItems.LOGGED_IN);
   }
@@ -76,6 +89,10 @@ export class AuthService {
   getLoggedUser(): UserWithType | null {
     const loggedIn = localStorage.getItem(localStorageItems.LOGGED_IN);
     return loggedIn === null ? null : JSON.parse(loggedIn);
+  }
+
+  logOut() {
+    localStorage.removeItem(localStorageItems.LOGGED_IN);
   }
 }
 

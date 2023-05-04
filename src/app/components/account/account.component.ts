@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RegisterErrors } from 'src/app/constants/errors';
 import { UserData, UserWithType } from 'src/app/models/user';
 import { authService } from 'src/app/services/auth.service';
+import { Location } from '@angular/common';
 import {
   emailValid,
   emptyFields,
@@ -10,6 +11,7 @@ import {
   phoneValid,
   returnEmptyObject,
 } from 'src/app/utilities';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-account',
@@ -28,9 +30,13 @@ export class AccountComponent {
   phone: string | undefined;
   address: string | undefined;
 
-  error: string | undefined;
+  message: string | undefined;
 
-  constructor() {
+  ngOnInit() {
+    this.message = '';
+  }
+
+  constructor(private location: Location, private router: Router) {
     const logged = this.authService.getLoggedUser();
     this.loggedIn = logged ?? returnEmptyObject();
 
@@ -46,7 +52,15 @@ export class AccountComponent {
   }
 
   saveChange() {
-    this.error = undefined;
+    if (
+      this.username === this.loggedIn.username &&
+      this.password === this.loggedIn.password &&
+      this.firstName === this.loggedIn.first_name &&
+      this.lastName === this.loggedIn.last_name &&
+      this.phone === this.loggedIn.phone &&
+      this.address === this.loggedIn.address
+    )
+      this.message = undefined;
     const data = {
       username: this.username,
       password: this.password,
@@ -59,27 +73,23 @@ export class AccountComponent {
 
     this.validateInput(data);
 
-    if (!this.error) {
-      const authServiceResponse = this.authService.register(data);
-      if (typeof authServiceResponse === 'string') {
-        this.error = authServiceResponse;
-      } else {
-        //this.router.navigate(['/homepage']);
-      }
+    if (!this.message) {
+      this.authService.updateUser(data);
+      this.message = 'Promena je sačuvana uspešno!';
     }
   }
 
   private validateInput(data: UserData): void {
-    if (emptyFields(data)) this.error = RegisterErrors.EMPTY_INPUT;
+    if (emptyFields(data)) this.message = RegisterErrors.EMPTY_INPUT;
 
     if (!emailValid(this.email ?? ''))
-      this.error = RegisterErrors.INVALID_EMAIL;
+      this.message = RegisterErrors.INVALID_EMAIL;
 
     if (!phoneValid(this.phone ?? ''))
-      this.error = RegisterErrors.INVALID_PHONE;
+      this.message = RegisterErrors.INVALID_PHONE;
 
     if (!passwordValid(this.password ?? ''))
-      this.error = RegisterErrors.INVALID_PASSWORD;
+      this.message = RegisterErrors.INVALID_PASSWORD;
 
     if (
       !(
@@ -89,8 +99,27 @@ export class AccountComponent {
         otherFieldsValid(this.username ?? '')
       )
     )
-      this.error = RegisterErrors.INVALID_FIELD;
+      this.message = RegisterErrors.INVALID_FIELD;
   }
 
-  return() {}
+  return(): void {
+    this.location.back();
+  }
+
+  disableButton() {
+    return (
+      this.username === this.loggedIn.username &&
+      this.password === this.loggedIn.password &&
+      this.firstName === this.loggedIn.first_name &&
+      this.lastName === this.loggedIn.last_name &&
+      this.phone === this.loggedIn.phone &&
+      this.address === this.loggedIn.address
+    );
+  }
+
+  logout() {
+    console.log('logout');
+    this.authService.logOut();
+    this.router.navigate(['/login']);
+  }
 }

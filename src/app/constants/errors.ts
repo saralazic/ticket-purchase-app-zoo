@@ -6,7 +6,7 @@ export enum RegisterErrors {
   EMAIL_ALREADY_EXISTS = 'Korisnik sa ovom adresom e-pošte je već registrovan!',
   EMPTY_INPUT = 'Morate uneti sva polja',
   INVALID_EMAIL = 'Morate uneti validnu email adresu!',
-  INVALID_PHONE = 'Morate uneti validan broj telefona!',
+  INVALID_PHONE = 'Morate uneti validan broj telefona u formatu +3816********!',
   INVALID_PASSWORD = 'Lozinka ne može biti kraća od 7 znakova, mora početi slovom i sadržati barem po jedno veliko slovo, specijalni karakter i cifru.',
   INVALID_FIELD = 'Polje ne može biti kraće od tri karaktera!',
 }

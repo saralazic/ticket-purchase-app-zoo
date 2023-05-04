@@ -71,7 +71,7 @@ const USERS_FULL_DATA = [
   },
 ];
 
-const EMPLOYEES = ['pera', 'zika', 'laza'];
+const EMPLOYEES = ['pera@gmail.com', 'zika@gmail.com', 'laza@gmail.com'];
 
 const TICKETS = [
   {
