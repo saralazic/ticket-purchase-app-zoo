@@ -1,1 +1,137 @@
-<p>events works!</p>
+<!DOCTYPE html>
+<html lang="en" class="bg">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><link rel="stylesheet" href="./events.component.css">
+  <link href="https://fonts.cdnfonts.com/css/baloo-bhai-2" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>   
+  <div>
+    <div>
+      <app-header></app-header>
+    </div>
+
+    <div class="grid-container">
+      <div class="item1">
+        {{events[0].caption}}
+        <img src="{{events[0].image}}" alt="{{events[0].description}}" id="item0">
+        <div class="description">
+          <table>
+            <tr>
+              <td>
+                <mat-icon>favorite</mat-icon>
+              </td>
+              <td>
+                {{events[0].likes.length}}
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                {{events[0].description}}
+              </td>
+            </tr>
+        </table>        </div>
+      </div>
+      <div class="item2"></div>
+      <div class="item3"></div>  
+      <div class="item4">
+        {{events[1].caption}}
+        <div *ngIf = "events.length>1">
+          <img src="{{events[1].image}}" alt="{{events[1].description}}" id="item1">
+          <div class="description">
+            <table>
+                <tr>
+                  <td>
+                    <mat-icon>favorite</mat-icon>
+                  </td>
+                  <td>
+                    {{events[1].likes.length}}
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    {{events[1].description}}
+                  </td>
+                </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="item5">        
+        <div *ngIf = "events.length>2">    
+          {{events[2].caption}}
+          <img src="{{events[2].image}}" alt="{{events[2].description}}" id="item2">
+          <div class="description">
+            <table>
+              <tr>
+                <td>
+                  <mat-icon>favorite</mat-icon>
+                </td>
+                <td>
+                  {{events[2].likes.length}}
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  {{events[2].description}}
+                </td>
+              </tr>
+          </table>          </div>
+        </div>
+      </div>
+      <div class="item6"></div>
+      <div class="item7"></div>
+      <div class="item8">
+        <div *ngIf = "events.length>3">
+          {{events[3].caption}}
+          <img src="{{events[3].image}}" alt="{{events[3].description}}" id="item3">
+          <div class="description">
+            <table>
+              <tr>
+                <td>
+                  <mat-icon>favorite</mat-icon>
+                </td>
+                <td>
+                  {{events[3].likes.length}}
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  {{events[3].description}}
+                </td>
+              </tr>
+          </table>          </div>
+        </div>
+      </div>  
+      <div class="item9">
+        <div *ngIf = "events.length>4">
+          {{events[4].caption}}
+          <img src="{{events[4].image}}" alt="{{events[4].description}}" id="item4">
+          <div class="description">
+            <table>
+              <tr>
+                <td>
+                  <mat-icon>favorite</mat-icon>
+                </td>
+                <td>
+                  {{events[4].likes.length}}
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  {{events[4].description}}
+                </td>
+              </tr>
+          </table>          </div>
+        </div>
+      </div>
+      <div class="item10"></div>
+    </div>
+
+  </div>
+  <div class="footer">
+    <app-footer></app-footer>
+  </div>
+</body>  
+</html>
