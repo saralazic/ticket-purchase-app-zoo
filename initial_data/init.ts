@@ -21,6 +21,9 @@ export function initializeLocalStorage() {
 
   if (!localStorage.getItem(localStorageItems.ANIMALS))
     localStorage.setItem(localStorageItems.ANIMALS, JSON.stringify(ANIMALS));
+
+  if (!localStorage.getItem(localStorageItems.EVENTS))
+    localStorage.setItem(localStorageItems.EVENTS, JSON.stringify(ZOO_EVENTS));
 }
 
 const USERS_FULL_DATA = [
@@ -242,6 +245,79 @@ const ANIMALS = [
   FROG,
 ] as Animal[];
 
+const ZOO_EVENTS = [
+  {
+    id: 1,
+    image: '../../../assets/images/events/alpacas.jpg',
+    caption: 'Vesela družina',
+    description: 'Iskoristite lep dan kao ova družina!',
+    likes: [
+      'sara@gmail.com',
+      'mina@gmail.com',
+      'example1@gmail.com',
+      'example2@gmail.com',
+      'example3@gmail.com',
+      'example4@gmail.com',
+    ],
+  },
+  {
+    id: 2,
+    image: '../../../../assets/images/events/baby-hippo.jpg',
+    caption: 'Prinovа',
+    description: 'Dođite što pre da posetite našeg najmlađeg člana',
+    likes: ['example3@gmail.com', 'example4@gmail.com'],
+  },
+  {
+    id: 3,
+    image: '../../../../assets/images/events/baby.jpg',
+    caption: '5 malih beba',
+    description: 'Ženkica jorkija pre par dana na svet je donela ove mališane',
+    likes: [
+      'sara@gmail.com',
+      'mina@gmail.com',
+      'example1@gmail.com',
+      'example2@gmail.com',
+      'example3@gmail.com',
+      'example4@gmail.com',
+      'example5@gmail.com',
+      'example6@gmail.com',
+      'example7@gmail.com',
+      'example8@gmail.com',
+    ],
+  },
+  {
+    id: 4,
+    image: '../../../../assets/images/events/new-red-panda.jpg',
+    caption: 'Crvena pandica',
+    description: 'Naša crvena panda konačno je dobila druga za igru',
+    likes: [
+      'sara@gmail.com',
+      'example4@gmail.com',
+      'example5@gmail.com',
+      'example6@gmail.com',
+      'example7@gmail.com',
+      'example8@gmail.com',
+    ],
+  },
+  {
+    id: 5,
+    image: '../../../../assets/images/events/posing-mercat.jpg',
+    caption: 'Poziranje',
+    description: 'Da li ste ovako fotogenični?',
+    likes: [
+      'sara@gmail.com',
+      'example1@gmail.com',
+      'example2@gmail.com',
+      'example3@gmail.com',
+      'example4@gmail.com',
+      'example5@gmail.com',
+      'example6@gmail.com',
+      'example7@gmail.com',
+      'example8@gmail.com',
+    ],
+  },
+];
+
 export enum localStorageItems {
   USERS = 'users_full_data',
   EMPLOYEES = 'employees',
@@ -250,4 +326,5 @@ export enum localStorageItems {
   PROCESSED_TICKETS = 'processed_tickets',
   ANIMALS = 'animals',
   NEW_ANIMAL = 'new_animal',
+  EVENTS = 'events',
 }
