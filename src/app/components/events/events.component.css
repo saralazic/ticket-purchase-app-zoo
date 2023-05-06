@@ -105,16 +105,21 @@ img{
     font-size: 18px;
 }
 
-.left_align{
-    text-align: left;
-}
-
-.right_align{
-    text-align: right;
-}
-
-
 table{
     table-layout: fixed;
     width: 100%;
+    border-collapse: separate;
+    border-spacing: 30px 5px ;    
+}
+
+
+.like_icon{
+    font-size: 19px;
+}
+
+.likes {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Adjust the vertical alignment */
+    font-size: 20px;
 }

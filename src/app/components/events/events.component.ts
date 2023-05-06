@@ -25,4 +25,11 @@ export class EventsComponent {
     this.eventService.likeEvent(event, this.loggedIn?.email ?? '');
     this.events = this.eventService.getEvents();
   }
+
+  getIconColor(index: number) {
+    const likesOnEvent = this.events[index].likes;
+    if (likesOnEvent.find((email) => email === this.loggedIn?.email))
+      return 'brown';
+    return '#003300';
+  }
 }

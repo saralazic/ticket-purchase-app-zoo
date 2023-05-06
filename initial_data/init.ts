@@ -300,7 +300,7 @@ const ZOO_EVENTS = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     image: '../../../../assets/images/events/posing-mercat.jpg',
     caption: 'Poziranje',
     description: 'Da li ste ovako fotogenični?',

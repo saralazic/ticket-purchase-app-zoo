@@ -18,20 +18,19 @@
         <img src="{{events[0].image}}" alt="{{events[0].description}}" id="item0">
         <div class="description">
           <table>
-            <tr>
-              <td>
-                <mat-icon>favorite</mat-icon>
-              </td>
-              <td>
-                {{events[0].likes.length}}
-              </td>
-            </tr>
-            <tr>
-              <td colspan="2">
-                {{events[0].description}}
-              </td>
-            </tr>
-        </table>        </div>
+              <tr>
+                <td>
+                  {{events[0].description}}
+                </td>
+              </tr>
+              <tr>
+                <td class="likes">
+                  <mat-icon class="like_icon" [style.color]="getIconColor(0)" (click)='like(events[0])'>favorite</mat-icon>
+                  {{events[0].likes.length}} sviđanja
+                </td>
+              </tr>
+        </table>        
+      </div>
       </div>
       <div class="item2"></div>
       <div class="item3"></div>  
@@ -40,18 +39,16 @@
         <div *ngIf = "events.length>1">
           <img src="{{events[1].image}}" alt="{{events[1].description}}" id="item1">
           <div class="description">
-            <table>
+              <table>
                 <tr>
                   <td>
-                    <mat-icon>favorite</mat-icon>
-                  </td>
-                  <td>
-                    {{events[1].likes.length}}
+                    {{events[1].description}}
                   </td>
                 </tr>
                 <tr>
-                  <td colspan="2">
-                    {{events[1].description}}
+                  <td class="likes">
+                    <mat-icon class="like_icon"  [style.color]="getIconColor(1)"  (click)='like(events[1])'>favorite</mat-icon>
+                    {{events[1].likes.length}} sviđanja
                   </td>
                 </tr>
             </table>
@@ -66,18 +63,17 @@
             <table>
               <tr>
                 <td>
-                  <mat-icon>favorite</mat-icon>
-                </td>
-                <td>
-                  {{events[2].likes.length}}
-                </td>
-              </tr>
-              <tr>
-                <td colspan="2">
                   {{events[2].description}}
                 </td>
               </tr>
-          </table>          </div>
+              <tr>
+                <td class="likes">
+                  <mat-icon class="like_icon"  [style.color]="getIconColor(2)"  (click)='like(events[2])'>favorite</mat-icon>
+                  {{events[2].likes.length}} sviđanja
+                </td>
+              </tr>
+          </table>          
+        </div>
         </div>
       </div>
       <div class="item6"></div>
@@ -90,18 +86,17 @@
             <table>
               <tr>
                 <td>
-                  <mat-icon>favorite</mat-icon>
-                </td>
-                <td>
-                  {{events[3].likes.length}}
-                </td>
-              </tr>
-              <tr>
-                <td colspan="2">
                   {{events[3].description}}
                 </td>
               </tr>
-          </table>          </div>
+              <tr>
+                <td class="likes">
+                  <mat-icon class="like_icon"  [style.color]="getIconColor(3)"  (click)='like(events[3])'>favorite</mat-icon>
+                  {{events[3].likes.length}} sviđanja
+                </td>
+              </tr>
+          </table>          
+        </div>
         </div>
       </div>  
       <div class="item9">
@@ -110,20 +105,19 @@
           <img src="{{events[4].image}}" alt="{{events[4].description}}" id="item4">
           <div class="description">
             <table>
-              <tr>
-                <td>
-                  <mat-icon>favorite</mat-icon>
-                </td>
-                <td>
-                  {{events[4].likes.length}}
-                </td>
-              </tr>
-              <tr>
-                <td colspan="2">
-                  {{events[4].description}}
-                </td>
-              </tr>
-          </table>          </div>
+                <tr>
+                  <td>
+                    {{events[4].description}}
+                  </td>
+                </tr>
+                <tr>
+                  <td class="likes">
+                    <mat-icon class="like_icon"  [style.color]="getIconColor(4)"  (click)='like(events[4])'>favorite</mat-icon>
+                    {{events[4].likes.length}} sviđanja
+                  </td>
+                </tr>       
+          </table>          
+        </div>
         </div>
       </div>
       <div class="item10"></div>
