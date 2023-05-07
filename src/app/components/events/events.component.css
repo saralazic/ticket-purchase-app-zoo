@@ -42,7 +42,6 @@ img{
     height: auto;
 } 
 
-
 .grid-container {
     margin-top: 50px;
     display: grid;
@@ -55,6 +54,7 @@ img{
     padding: 10px;
     /* grid-template-rows: 300px 300px; */
     grid-template-rows: minmax(200px, 2fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px));
     color: #003300;
 }
 
@@ -122,4 +122,9 @@ table{
     justify-content: center;
     align-items: center; /* Adjust the vertical alignment */
     font-size: 20px;
+}
+
+.scrollable{
+    max-height: 500;
+    overflow-y: auto;
 }
