@@ -9,6 +9,12 @@ export class UserService {
     return employees.find((e) => e === email) ? true : false;
   }
 
+  getUserEmailByUsername(username: string): string {
+    const users = this.getAllUsers();
+    const user = users.find((u) => u.username === username);
+    return user ? user.email : '';
+  }
+
   public getAllUsers(): UserData[] {
     const usersFromStorage = localStorage.getItem(localStorageItems.USERS);
     return this.parseArrayFromStorage(usersFromStorage);

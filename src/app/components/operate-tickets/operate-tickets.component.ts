@@ -3,6 +3,8 @@ import { PurchaseStatus, TicketDataDto } from 'src/app/models/tickets';
 import { PROMO_CODES, TICKET_TYPE } from 'src/app/models/enums';
 import { ticketService } from 'src/app/services/tickets.service';
 import { sleep } from 'src/app/utilities';
+import { notificationService } from 'src/app/services/notification.service';
+import { userService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-operate-tickets',
@@ -10,7 +12,9 @@ import { sleep } from 'src/app/utilities';
   styleUrls: ['./operate-tickets.component.css'],
 })
 export class OperateTicketsComponent {
+  private notificationService = notificationService;
   private ticketService = ticketService;
+  private userService = userService;
 
   public error: string = '';
   public ticketsToOperate: TicketDataDto[] = [];
@@ -23,8 +27,14 @@ export class OperateTicketsComponent {
   async process(id: string, status: boolean) {
     try {
       this.ticketsToOperate.map((t) => {
-        if (t.id === id)
+        if (t.id === id) {
           t.status = status ? PurchaseStatus.APPROVED : PurchaseStatus.DECLINED;
+          const email = this.userService.getUserEmailByUsername(t.username);
+          this.notificationService.addNewNotification(
+            this.generateNotification(t, status),
+            email
+          );
+        }
       });
       (<HTMLInputElement>document.getElementById(id)).style.backgroundColor =
         status ? '#dae1ba' : '#eccaca';
@@ -32,6 +42,7 @@ export class OperateTicketsComponent {
       await sleep(1000); // sleep 3 seconds
 
       this.ticketsToOperate = ticketService.processTicket(id, status);
+
       window.location.reload();
     } catch (err) {
       this.error =
@@ -89,6 +100,36 @@ export class OperateTicketsComponent {
 
     text += ' po ceni od ';
     text += row.request.price + ' dinara';
+
+    return text;
+  }
+
+  generateNotification(row: TicketDataDto, approved: boolean) {
+    const count =
+      row.request.zoo +
+      row.request.aquarium +
+      row.request.feeding +
+      row.request.full;
+    let text = '';
+    text += 'Vaš zahtev za kupovinu ';
+    text += count;
+    if (count === 1) text += ' karte za ';
+    else text += ' karata za ';
+
+    switch (row.request.type) {
+      case TICKET_TYPE.CHILDREN:
+        text += 'decu';
+        break;
+      case TICKET_TYPE.ADULT:
+        text += 'odrasle';
+        break;
+      default:
+        text += 'grupu';
+    }
+
+    text += ' je';
+    if (approved) text += ' odobren! Uživajte u poseti.';
+    else text += ' odbijen. Molimo pokušajte ponovo';
 
     return text;
   }
