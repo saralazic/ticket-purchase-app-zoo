@@ -24,6 +24,13 @@ export function initializeLocalStorage() {
 
   if (!localStorage.getItem(localStorageItems.EVENTS))
     localStorage.setItem(localStorageItems.EVENTS, JSON.stringify(ZOO_EVENTS));
+
+  if (!localStorage.getItem(localStorageItems.NOTIFICATIONS)) {
+    localStorage.setItem(
+      localStorageItems.NOTIFICATIONS,
+      JSON.stringify(NOTIFICATIONS)
+    );
+  }
 }
 
 const USERS_FULL_DATA = [
@@ -318,6 +325,37 @@ const ZOO_EVENTS = [
   },
 ];
 
+const NOTIFICATIONS = [
+  {
+    id: uuid(),
+    seen: true,
+    text: 'Vaš zahtev za kupovinu 3 karte za odrasle je odobren, uživajte u poseti!',
+    email: 'sara@gmail.com',
+    date: new Date(2020, 10, 8, 15, 23),
+  },
+  {
+    id: uuid(),
+    seen: true,
+    text: 'Nažalost, Vaš zahtev za kupovinu 2 karte za odrasle je odbijen, molimo pokušajte ponovo kasnije!',
+    email: 'sara@gmail.com',
+    date: new Date(2022, 6, 10, 8, 48),
+  },
+  {
+    id: uuid(),
+    seen: true,
+    text: 'Vaš zahtev za kupovinu 3 karte za odrasle je odobren, uživajte u poseti!',
+    email: 'mina@gmail.com',
+    date: new Date(2022, 10, 10, 12, 20),
+  },
+  {
+    id: uuid(),
+    seen: false,
+    text: 'Zahtev za kupovinu 4 karte za odrasle je odobren, uživajte u poseti!',
+    email: 'sara@gmail.com',
+    date: new Date(2023, 10, 5, 22, 48),
+  },
+];
+
 export enum localStorageItems {
   USERS = 'users_full_data',
   EMPLOYEES = 'employees',
@@ -327,4 +365,5 @@ export enum localStorageItems {
   ANIMALS = 'animals',
   NEW_ANIMAL = 'new_animal',
   EVENTS = 'events',
+  NOTIFICATIONS = 'notifications',
 }

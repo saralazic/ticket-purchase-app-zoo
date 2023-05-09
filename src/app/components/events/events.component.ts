@@ -18,7 +18,6 @@ export class EventsComponent {
   ngOnInit() {
     this.events = eventsService.getEvents();
     this.loggedIn = authService.getLoggedUser();
-    console.log(this.events);
   }
 
   like(event: ZooEvent) {

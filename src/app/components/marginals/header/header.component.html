@@ -34,7 +34,7 @@
                 NOVA ŽIVOTINJA
             </button>
             <button *ngIf = "loggedUser?.type === 1" mat-fab extended class="icon_button"  onclick="location.href = '/notifications';">
-                <mat-icon>notifications</mat-icon>
+                <mat-icon [style.color]="getNotificationsStatus()">notifications</mat-icon>
                 OBAVEŠTENJA
             </button> 
             <button mat-fab extended class="icon_button"  onclick="location.href = '/account';">

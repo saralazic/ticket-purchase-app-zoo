@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UserWithType } from 'src/app/models/user';
 import { authService } from 'src/app/services/auth.service';
+import { notificationService } from 'src/app/services/notification.service';
 
 @Component({
   selector: 'app-header',
@@ -9,6 +10,7 @@ import { authService } from 'src/app/services/auth.service';
 })
 export class HeaderComponent {
   private authService = authService;
+  private notificationService = notificationService;
 
   loggedUser: UserWithType | null = null;
 
@@ -16,6 +18,15 @@ export class HeaderComponent {
 
   ngOnInit(): void {
     this.loggedUser = this.authService.getLoggedUser();
-    console.log(this.loggedUser);
+  }
+
+  getNotificationsStatus(): string {
+    const unseenNotifications =
+      this.notificationService.getNewNotificationForUser(
+        this.loggedUser?.email ?? ''
+      );
+
+    if (unseenNotifications.length > 0) return 'brown';
+    return 'white';
   }
 }

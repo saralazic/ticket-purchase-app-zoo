@@ -1,4 +1,4 @@
-import { initializeLocalStorage, localStorageItems } from 'initial_data/init';
+import { localStorageItems } from 'initial_data/init';
 import { User, UserCredentials, UserData, UserType } from '../models/user';
 import { userService } from './user.service';
 import { UserWithType } from './../models/user';
@@ -48,13 +48,11 @@ export class AuthService {
     let currentUser = allUsers.find((usr) => usr.username === data.username);
 
     if (currentUser) {
-      console.log('Username already exists');
       return RegisterErrors.USERNAME_ALREADY_EXISTS;
     }
 
     currentUser = allUsers.find((usr) => usr.email === data.email);
     if (currentUser) {
-      console.log('Email already exists');
       return RegisterErrors.EMAIL_ALREADY_EXISTS;
     }
 

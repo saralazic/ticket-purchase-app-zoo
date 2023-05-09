@@ -26,8 +26,6 @@ export class AnimalPageComponent {
 
   ngOnInit() {
     this.route.queryParams.subscribe((params) => {
-      console.log(params); // Object containing the query parameters
-      console.log(params['index']); // Accessing a specific query parameter\
       const index = params['index'];
       if (index) {
         this.animal = this.animalService.getAnimalByIndex(index);

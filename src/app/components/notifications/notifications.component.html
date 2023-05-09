@@ -1,1 +1,31 @@
-<p>notifications works!</p>
+<!DOCTYPE html>
+<html lang="en" class="bg">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><link rel="stylesheet" href="./notifications.component.css">
+  <link href="https://fonts.cdnfonts.com/css/baloo-bhai-2" rel="stylesheet">
+</head>
+<body>   
+  <div>
+    <div>
+      <app-header></app-header>
+    </div>
+  </div>
+  <div class="content">
+    <table class = "position_table center_table">
+        <tbody>
+          <ng-container *ngFor="let row of notifications">
+              <tr>
+                <td width = "900px" [style.background-color]="getBackgroundColor(row.seen)" class="center_table"> 
+                  <p id="{{row.id}}" [style.background-color]="getBackgroundColor(row.seen)">{{row.text}}</p>
+                </td>
+              </tr>
+          </ng-container>
+        </tbody>
+      </table>
+  </div>
+  <div class="footer">
+    <app-footer></app-footer>
+  </div>
+</body>  
+</html> 
