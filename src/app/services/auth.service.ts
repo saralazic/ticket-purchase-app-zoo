@@ -67,7 +67,7 @@ export class AuthService {
     return newUser;
   }
 
-  updateUser(data: UserData): void {
+  updateUser(data: UserWithType): void {
     let allUsers = userService.getAllUsers();
     let currentUserIndex = allUsers.findIndex(
       (usr) => usr.email === data.email

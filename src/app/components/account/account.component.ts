@@ -74,7 +74,7 @@ export class AccountComponent {
     this.validateInput(data);
 
     if (!this.message) {
-      this.authService.updateUser(data);
+      this.authService.updateUser({ ...data, type: this.loggedIn.type });
       this.message = 'Promena je sačuvana uspešno!';
     }
   }
